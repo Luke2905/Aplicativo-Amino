@@ -15,10 +15,8 @@
 	background-color: #2041ff;
 }
 /* -------- PAGINA DE LOGIN -------------- */
-body{
+.login-body{
 	margin:0;
-	color:#2041ff;
-	background:#6c6f7e;
 	font:600 16px/18px 'Open Sans',sans-serif;
 }
 *,:after,:before{box-sizing:border-box}
@@ -181,6 +179,12 @@ h1{
 /*  ------------------ FIM PAGINA DA LOGIN ----------------------- */
 
 /* ---------------- Menu ---------------------------- */
+body{
+	margin:0;
+	color:#2041ff;
+	background:#6c6f7e;
+	font:600 16px/18px 'Open Sans',sans-serif;
+}
 .sidenav {
 	height: 100%;
 	width: 0;
@@ -217,7 +221,7 @@ h1{
   
   #main {
 	transition: margin-left .5s;
-	width: 100%;
+	width: auto;
 	background-color: #aaa;
 	padding: 16px;
   }
@@ -241,7 +245,7 @@ h1{
 
   }
   .home-body{
-	float:none;
+	float: none;
 	display: grid;
 	grid-gap:5px;
 	grid-template-columns: auto;
@@ -307,6 +311,7 @@ h1{
 	color: #05377c;
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	font-style: italic;
+	float: none;
   }
   .icon-prod{
 	max-width: 120px;
