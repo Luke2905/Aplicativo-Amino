@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário Pop-up</title>
+    <style>
+        /* Estilo do fundo do modal */
+        .modal {
+            display: none; /* Inicialmente oculto */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        /* Estilo do conteúdo do modal */
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 40%;
+            border-radius: 8px;
+        }
+
+        /* Estilo do botão de fechar */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Estilo básico para o formulário */
+        input[type="text"], input[type="email"], input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 10px 0;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Formulário Pop-up Exemplo</h2>
+
+<!-- Botão para abrir o modal -->
+<button id="abrirModal">Abrir Formulário</button>
+
+<!-- Modal -->
+<div id="meuModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Formulário de Contato</h2>
+        <form>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+</div>
+
+<script>
+    // Obter elementos
+    var modal = document.getElementById("meuModal");
+    var btn = document.getElementById("abrirModal");
+    var span = document.getElementsByClassName("close")[0];
+
+    // Quando o botão for clicado, abrir o modal
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+
+    // Quando o botão de fechar (x) for clicado, fechar o modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // Fechar o modal ao clicar fora do conteúdo do modal
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+<!-- HTML:
+ - O botão Abrir Formulário dispara o pop-up.
+ - O modal (div com id meuModal) contém o formulário.
+CSS:
+ - A classe .modal define o estilo do pop-up (inicialmente oculto).
+ - .modal-content estiliza a janela do formulário.
+JavaScript:
+ - Mostra o modal ao clicar no botão e esconde quando o botão de fechar (x) ou fora do modal é clicado. -->
+
+</body>
+</html>
