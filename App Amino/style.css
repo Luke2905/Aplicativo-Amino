@@ -18,7 +18,7 @@
 body{
 	margin:0;
 	color:#2041ff;
-	background:#c8c8c8;
+	background:#6c6f7e;
 	font:600 16px/18px 'Open Sans',sans-serif;
 }
 *,:after,:before{box-sizing:border-box}
@@ -217,6 +217,8 @@ h1{
   
   #main {
 	transition: margin-left .5s;
+	width: 100%;
+	background-color: #aaa;
 	padding: 16px;
   }
   
@@ -225,24 +227,104 @@ h1{
 	.sidenav a {font-size: 18px;}
   }
   /* ------------------- Fim Menu ---------------------- */
+  /* foda-se tudo - boa sorte pra quem for mexer nessa porra */
   /* ---------------------- Home ------------------------ */
   .home-header{
+	margin: 5px;
 	height: 40%;
 	max-width: 100%;
-	background-color: #2041ff;
+	background-image: url(https://www.amino.com.br/wp-content/uploads/2022/07/espuma-poliuretano-amino-5.jpg);
 	border-radius: 10px;
-	margin: 5px;
+	border-color: #05377c;
+	border-style: solid;
+	
+
   }
   .home-body{
+	float:none;
+	display: grid;
+	grid-gap:5px;
+	grid-template-columns: auto;
+	grid-template-rows: auto;
+	margin-top: 5px;
+	margin-left: 5px;
+	margin-right: 5px;
 	max-width: 100%;
-	height: 800px;
-	background-color: #879dc4;
+	border-radius:10px 10px 0 0 ;
+	background-color: #ffffff;
+  }
+  .item-1{
+	border: solid black;
+	border-radius: 10px;
+	grid-area: 1/1/7/1;
+  }
+  .item-2{
+	border: solid black;
+	border-radius: 10px;
+	grid-area: 1/2/2/4;
+  }
+  .item-3{
+	border: solid black;
+	border-radius: 10px;
+	grid-area: 2/2/2/4;
+  }
+  .item-4{
+	border: solid black;
+	border-radius: 10px;
+	grid-area: 3/2/3/4;
+  }
+  .item-5{
+	border: solid black;
+	border-radius: 10px;
+	grid-area: 4/2/7/3;
+  }
+  .item-6{
+	border: solid black;
+	border-radius: 10px;
+	grid-area: 4/3/7/4;
+  }
+  .item-7{
+	border: solid black;
+	border-radius: 10px;
+	grid-area: 7/1/7/4;
   }
   .home-footer{
+	margin-bottom: 5px;
+	margin-left: 5px;
+	margin-right: 5px;
 	max-width: 100%;
 	height: 100px;
-	background-color: #818181;
+	background-color: #05377c;
   }
   h4{
 	text-align: center;
   }
+  /* ------------------- Componetes  Noticias ----------------- */
+  #noticia-titulo{
+	margin: 3px;
+	font: optional;
+	font-size: 50px;
+	color: #05377c;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-style: italic;
+  }
+  .icon-prod{
+	max-width: 120px;
+	max-height: 120px;
+	position:relative;
+	border-radius: 50%;
+  }
+  .lista-prod{
+	padding: 10px;
+	overflow: auto;                         /* Adiciona a scrollbar ao item */
+	height: 500px;     
+  }
+  .prod-item{
+	margin: 10px;
+	font-size: 25px;
+  }
+.prod-desc{
+	position: relative;
+	margin: 10px;
+	padding-left: 110px;
+}
