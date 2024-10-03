@@ -314,8 +314,8 @@ h1{
 	margin-left: 5px;
 	margin-right: 5px;
 	max-width: 100%;
-	height: 100px;
-	background-color: #05377c;
+	height: 150px;
+	background-color: #003366;
 	text-align: center;
 	font-size: 30px;
 	font-family: sans-serif;
@@ -374,4 +374,3 @@ h1{
 	padding: 20px;
 	text-align: center;
 }
-
