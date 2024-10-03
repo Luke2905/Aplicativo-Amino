@@ -232,10 +232,10 @@ h1{
 	margin: 5px;
 	height: 40%;
 	max-width: 100%;
-	background-image: url(https://www.amino.com.br/wp-content/uploads/2022/07/espuma-poliuretano-amino-5.jpg);
-	border-radius: 10px;
-	border-color: #05377c;
-	border-style: solid;
+	background-color: #003366;
+	color: white;
+	padding: 20px;
+	text-align: center;
 	
 
   }
@@ -364,5 +364,14 @@ h1{
 #formula-desc{
 	margin: 5px;
 	font-size: 15px;
+}
+.form-header{
+	margin: 5px;
+	height: 40%;
+	max-width: 100%;
+	background-color: #003366;
+	color: white;
+	padding: 20px;
+	text-align: center;
 }
 
