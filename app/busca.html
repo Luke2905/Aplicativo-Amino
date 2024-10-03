@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busca Avançada po Propriedades</title>
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .header {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 30px;
+            color: #2d6da3;
+        }
+        .search-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        .search-form label {
+            font-size: 14px;
+            color: #333;
+        }
+        .search-form input, .search-form select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .search-form .full-width {
+            grid-column: span 2;
+        }
+        .search-form .checkbox-group {
+            display: flex;
+            align-items: center;
+        }
+        .search-form .checkbox-group input {
+            margin-right: 10px;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .button-container button {
+            padding: 10px 30px;
+            background-color: #2d6da3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .button-container button:hover {
+            background-color: #1e4f76;
+        }
+    </style>
+</head>
+<body>
+        <!-- Menu Lateral -->
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <h1>AMINO</h1>
+            <h4 style="font-size: 75%;">Desenvolvimento de Fórmulas</h4>
+            <a href="home.html"><img class="icon" src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="screen"> Home</a>
+            <a href="#"><img class="icon" src="https://cdn-icons-png.flaticon.com/512/1536/1536385.png" alt="screen"> Aplicação</a>
+            <a href="#"><img class="icon" src="https://static.vecteezy.com/ti/vetor-gratis/p1/5846675-quimica-preto-glifo-icone-reacao-quimica-em-copo-tubo-de-teste-pipeta-frasco-laboratorio-equipamento-aulas-quimica-silhueta-simbolo-em-espaco-branco-isolado-ilustracao-vetor.jpg" alt="screen"> Ensaios</a>
+            <a href="formulas.html"><img class="icon" src="https://static.vecteezy.com/system/resources/previews/017/540/428/non_2x/formula-icon-free-vector.jpg" alt="screen"> Fórmula</a>
+            <a href="#"><img class="icon" src="https://cdn-icons-png.flaticon.com/512/645/645652.png" alt="screen"> Matéria-Prima</a>
+            <a href="busca.html"><img class="icon" src="https://e7.pngegg.com/pngimages/900/842/png-clipart-computer-icons-encapsulated-postscript-others-angle-text.png" alt="screen"> Propriedades</a>
+            <a href="#"><img class="icon" src="https://cdn-icons-png.flaticon.com/512/2363/2363742.png" alt="screen"> Sistema</a>
+            <a href="comparativo.html"><img class="icon" src="https://cdn-icons-png.flaticon.com/512/45/45754.png" alt="screen"> Comparativo</a>
+            <a href="#"><img class="icon" src="https://thumb.ac-illust.com/89/89e84c7e7bde4ad0161456287fd132ee_t.jpeg" alt="screen"> Troubleshoot</a>
+            <a href="#"><img class="icon" src="https://static.vecteezy.com/system/resources/previews/008/442/086/non_2x/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg" alt="screen"> Usuários</a>
+            <form action="login.html">
+                <input class="botao" type="submit" value="Sair" />
+            </form>
+        </div>
+        
+        <!-- Conteúdo Principal -->
+        <div id="main">
+            <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
+    
+            <!-- Cabeçalho da Página -->
+            <div class="home-header">
+                <h1 style="font-size:80px;"> Propriedades </h1>
+            </div>
+            <div class="container">
+                <form class="search-form">
+                    <div>
+                        <label for="ffo-yield">Densidade</label>
+                        <input type="text" id="ffo-yield-min" placeholder="min">
+                        <input type="text" id="ffo-yield-max" placeholder="max">
+                    </div>
+                    <div>
+                        <label for="dividend-yield">Tempo de Crescimento</label>
+                        <input type="text" id="dividend-yield-min" placeholder="min">
+                        <input type="text" id="dividend-yield-max" placeholder="max">
+                    </div>
+                    <div>
+                        <label for="p-vp">Tempo de Creme</label>
+                        <input type="text" id="p-vp-min" placeholder="min">
+                        <input type="text" id="p-vp-max" placeholder="max">
+                    </div>
+                    <div>
+                        <label for="valor-mercado">Tempo de Gel</label>
+                        <input type="text" id="valor-mercado-min" placeholder="min">
+                        <input type="text" id="valor-mercado-max" placeholder="max">
+                    </div>
+                    <div>
+                        <label for="qtd-imoveis">Tempo de Pega-livre</label>
+                        <input type="text" id="qtd-imoveis-min" placeholder="min">
+                        <input type="text" id="qtd-imoveis-max" placeholder="max">
+                    </div>
+                    <div>
+                        <label for="preco-m2">Dureza Shore A</label>
+                        <input type="text" id="preco-m2-min" placeholder="min">
+                        <input type="text" id="preco-m2-max" placeholder="max">
+                    </div>
+                    <div>
+                        <label for="aluguel-m2">Teor de NCO</label>
+                        <input type="text" id="aluguel-m2-min" placeholder="min">
+                        <input type="text" id="aluguel-m2-max" placeholder="max">
+                    </div>
+                    <div>
+                        <label for="cap-rate">Viscosidade</label>
+                        <input type="text" id="cap-rate-min" placeholder="min">
+                        <input type="text" id="cap-rate-max" placeholder="max">
+                    </div>
+                    <div>
+                        <label for="vacancia">Densidade-livre</label>
+                        <input type="text" id="vacancia-min" placeholder="min">
+                        <input type="text" id="vacancia-max" placeholder="max">
+                    </div>
+                    <div class="full-width">
+                        <label for="segmento-atuacao">Segmento de Atuação</label>
+                        <select id="segmento-atuacao">
+                            <option value="">Selecionar...</option>
+                            <option value="comercial">Adtivos de Performace</option>
+                            <option value="residencial">Sistema PU</option>
+                            <option value="logistico">CASE</option>
+                            <!-- Adicionar outras opções conforme necessário -->
+                        </select>
+                    </div>
+                    <div class="button-container full-width">
+                        <button type="submit">Buscar</button>
+                    </div>
+                </form>
+            </div>
+            <!-- Rodapé da Página -->
+            <div class="home-footer">
+                <a style="margin: 10px;"> Aplicativo Conceito <br>© Todos o direitos reservados - AMINO QUIMICA LTDA</a>
+            </div>
+        </div>
+    
+        <!-- Scripts -->
+        <script>
+            function openNav() {
+                document.getElementById("mySidenav").style.width = "250px";
+                document.getElementById("main").style.marginLeft = "250px";
+                document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+            }
+    
+            function closeNav() {
+                document.getElementById("mySidenav").style.width = "0";
+                document.getElementById("main").style.marginLeft = "0";
+                document.body.style.backgroundColor = "white";
+            }
+        </script>
+</body>
+</html>
