@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparativo de Sistemas</title>
+        <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+        .header {
+            background-color: #003366;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            text-align: left;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #003366;
+            color: white;
+        }
+        .bar-container {
+            width: 100%;
+            height: 20px;
+            background-color: #e0e0e0;
+            position: relative;
+        }
+        .bar {
+            height: 100%;
+            background-color: #336699;
+            position: absolute;
+        }
+        .value {
+            position: absolute;
+            right: 0;
+            color: white;
+            font-weight: bold;
+            padding-right: 5px;
+        }
+        .label {
+            width: 150px;
+        }
+        .system-header {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 5px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+  <!-- Menu Lateral -->
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <h1>AMINO</h1>
+    <h4 style="font-size: 75%;">Desenvolvimento de Fórmulas</h4>
+    <a href="home.html"><img class="icon" src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="screen"> Home</a>
+    <a href="#"><img class="icon" src="https://cdn-icons-png.flaticon.com/512/1536/1536385.png" alt="screen"> Aplicação</a>
+    <a href="#"><img class="icon" src="https://static.vecteezy.com/ti/vetor-gratis/p1/5846675-quimica-preto-glifo-icone-reacao-quimica-em-copo-tubo-de-teste-pipeta-frasco-laboratorio-equipamento-aulas-quimica-silhueta-simbolo-em-espaco-branco-isolado-ilustracao-vetor.jpg" alt="screen"> Ensaios</a>
+    <a href="formulas.html"><img class="icon" src="https://static.vecteezy.com/system/resources/previews/017/540/428/non_2x/formula-icon-free-vector.jpg" alt="screen"> Fórmula</a>
+    <a href="#"><img class="icon" src="https://cdn-icons-png.flaticon.com/512/645/645652.png" alt="screen"> Matéria-Prima</a>
+    <a href="#"><img class="icon" src="https://e7.pngegg.com/pngimages/900/842/png-clipart-computer-icons-encapsulated-postscript-others-angle-text.png" alt="screen"> Propriedades</a>
+    <a href="#"><img class="icon" src="https://cdn-icons-png.flaticon.com/512/2363/2363742.png" alt="screen"> Sistema</a>
+    <a href="comparativo.html"><img class="icon" src="https://cdn-icons-png.flaticon.com/512/45/45754.png" alt="screen"> Comparativo</a>
+    <a href="#"><img class="icon" src="https://thumb.ac-illust.com/89/89e84c7e7bde4ad0161456287fd132ee_t.jpeg" alt="screen"> Troubleshoot</a>
+    <a href="#"><img class="icon" src="https://static.vecteezy.com/system/resources/previews/008/442/086/non_2x/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg" alt="screen"> Usuários</a>
+    <form action="login.html">
+        <input class="botao" type="submit" value="Sair" />
+    </form>
+</div>
+
+<!-- Conteúdo Principal -->
+<div id="main">
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
+    <div>
+        <div class="header">
+            <h1>Comparativo de Sistemas</h1>
+        </div>
+    
+        <table style="height: 800px;">
+            <thead>
+                <tr>
+                    <th>Propriedades</th>
+                    <th>Amipol BVE 2260/EX</th>
+                    <th>Amipol BVE 2258</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>T.CREME (seg)</td>
+                    <td>
+                        <div class="bar-container">
+                            <div class="bar" style="width: 32%;"></div>
+                            <div class="value">32</div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="bar-container">
+                            <div class="bar" style="width: 20%;"></div>
+                            <div class="value">20</div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>DENSIDADE (KG/M3)</td>
+                    <td>
+                        <div class="bar-container">
+                            <div class="bar" style="width: 18%;"></div>
+                            <div class="value">18</div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="bar-container">
+                            <div class="bar" style="width: 20%;"></div>
+                            <div class="value">20</div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>T.CRESCIMENTO (SEG)</td>
+                    <td>
+                        <div class="bar-container">
+                            <div class="bar" style="width: 31%;"></div>
+                            <div class="value">31</div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="bar-container">
+                            <div class="bar" style="width: 31%;"></div>
+                            <div class="value">31</div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>TEOR DE NCO (%)</td>
+                    <td>
+                        <div class="bar-container">
+                            <div class="bar" style="width: 31%;"></div>
+                            <div class="value">31</div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="bar-container">
+                            <div class="bar" style="width: 31%;"></div>
+                            <div class="value">31</div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>VISCOSIDADE (CPS)</td>
+                    <td>
+                        <div class="bar-container">
+                            <div class="bar" style="width: 31%;"></div>
+                            <div class="value">31</div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="bar-container">
+                            <div class="bar" style="width: 31%;"></div>
+                            <div class="value">31</div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+<div class="home-footer">
+<a style="margin: 10px;" href=""> Aplicativo Conceito <br>© Todos o direitos reservados - AMINO QUIMICA LTDA</a>
+</div>
+</div>
+
+    <!-- Scripts -->
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+            document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+            document.body.style.backgroundColor = "white";
+        }
+    </script>
+</body>
+</html>
