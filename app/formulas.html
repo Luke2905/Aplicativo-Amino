@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+    <title>Formulário Pop-up</title>
+    <style>
+        /* Estilo do fundo do modal */
+        .modal {
+            display: none; /* Inicialmente oculto */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        /* Estilo do conteúdo do modal */
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 40%;
+            border-radius: 8px;
+        }
+
+        /* Estilo do botão de fechar */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Estilo básico para o formulário */
+        input[type="text"], input[type="email"], input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 10px 0;
+            box-sizing: border-box;
+        }
+        #abrirModal{
+            margin-left: 80%;
+            max-width: 400px;
+            max-height: 200px;
+            box-shadow: inset;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Menu Lateral -->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <h1>AMINO</h1>
+        <h4 style="font-size: 75%;">Desenvolvimento de Fórmulas</h4>
+        <a href="home.html"><img class="icon" src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="screen"> Home</a>
+        <a href="#"><img class="icon" src="https://cdn-icons-png.flaticon.com/512/1536/1536385.png" alt="screen"> Aplicação</a>
+        <a href="#"><img class="icon" src="https://static.vecteezy.com/ti/vetor-gratis/p1/5846675-quimica-preto-glifo-icone-reacao-quimica-em-copo-tubo-de-teste-pipeta-frasco-laboratorio-equipamento-aulas-quimica-silhueta-simbolo-em-espaco-branco-isolado-ilustracao-vetor.jpg" alt="screen"> Ensaios</a>
+        <a href="formulas.html"><img class="icon" src="https://static.vecteezy.com/system/resources/previews/017/540/428/non_2x/formula-icon-free-vector.jpg" alt="screen"> Fórmula</a>
+        <a href="#"><img class="icon" src="https://cdn-icons-png.flaticon.com/512/645/645652.png" alt="screen"> Matéria-Prima</a>
+        <a href="#"><img class="icon" src="https://e7.pngegg.com/pngimages/900/842/png-clipart-computer-icons-encapsulated-postscript-others-angle-text.png" alt="screen"> Propriedades</a>
+        <a href="#"><img class="icon" src="https://cdn-icons-png.flaticon.com/512/2363/2363742.png" alt="screen"> Sistema</a>
+        <a href="comparativo.html"><img class="icon" src="https://cdn-icons-png.flaticon.com/512/45/45754.png" alt="screen"> Comparativo</a>
+        <a href="#"><img class="icon" src="https://thumb.ac-illust.com/89/89e84c7e7bde4ad0161456287fd132ee_t.jpeg" alt="screen"> Troubleshoot</a>
+        <a href="#"><img class="icon" src="https://static.vecteezy.com/system/resources/previews/008/442/086/non_2x/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg" alt="screen"> Usuários</a>
+        <form action="login.html">
+            <input class="botao" type="submit" value="Sair" />
+        </form>
+    </div>
+    
+    <!-- Conteúdo Principal -->
+    <div id="main">
+        <div class="form-header">
+            <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
+            <!-- Botão para abrir o modal -->
+    <button class="botao" id="abrirModal">Abrir Formulário</button>
+    <h2 style="text-align: center;">Fórmulas</h2>
+        </div>
+<dl>
+    <dt class="formula-item" style="font-size:30px;cursor:pointer" >1
+        <p id="formula-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur quasi eveniet doloribus animi impedit labore blanditiis, ullam fugit provident hic est asperiores voluptatum, mollitia in aut dolore repellendus aliquam ea!</p>
+    </dt>
+    <dt class="formula-item" style="font-size:30px;cursor:pointer" >1
+        <p id="formula-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur quasi eveniet doloribus animi impedit labore blanditiis, ullam fugit provident hic est asperiores voluptatum, mollitia in aut dolore repellendus aliquam ea!</p>
+    </dt>
+    <dt class="formula-item" style="font-size:30px;cursor:pointer" >1
+        <p id="formula-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur quasi eveniet doloribus animi impedit labore blanditiis, ullam fugit provident hic est asperiores voluptatum, mollitia in aut dolore repellendus aliquam ea!</p>
+    </dt>
+    <dt class="formula-item" style="font-size:30px;cursor:pointer" >1
+        <p id="formula-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur quasi eveniet doloribus animi impedit labore blanditiis, ullam fugit provident hic est asperiores voluptatum, mollitia in aut dolore repellendus aliquam ea!</p>
+    </dt>
+    <dt class="formula-item" style="font-size:30px;cursor:pointer" >1
+        <p id="formula-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur quasi eveniet doloribus animi impedit labore blanditiis, ullam fugit provident hic est asperiores voluptatum, mollitia in aut dolore repellendus aliquam ea!</p>
+    </dt>
+    <dt class="formula-item" style="font-size:30px;cursor:pointer" >1
+        <p id="formula-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur quasi eveniet doloribus animi impedit labore blanditiis, ullam fugit provident hic est asperiores voluptatum, mollitia in aut dolore repellendus aliquam ea!</p>
+    </dt>
+    <dt class="formula-item" style="font-size:30px;cursor:pointer" >1
+        <p id="formula-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur quasi eveniet doloribus animi impedit labore blanditiis, ullam fugit provident hic est asperiores voluptatum, mollitia in aut dolore repellendus aliquam ea!</p>
+    </dt>
+    <dt class="formula-item" style="font-size:30px;cursor:pointer" >1
+        <p id="formula-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur quasi eveniet doloribus animi impedit labore blanditiis, ullam fugit provident hic est asperiores voluptatum, mollitia in aut dolore repellendus aliquam ea!</p>
+    </dt>
+    <dt class="formula-item" style="font-size:30px;cursor:pointer" >1
+        <p id="formula-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur quasi eveniet doloribus animi impedit labore blanditiis, ullam fugit provident hic est asperiores voluptatum, mollitia in aut dolore repellendus aliquam ea!</p>
+    </dt>
+    <dt class="formula-item" style="font-size:30px;cursor:pointer" >1
+        <p id="formula-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur quasi eveniet doloribus animi impedit labore blanditiis, ullam fugit provident hic est asperiores voluptatum, mollitia in aut dolore repellendus aliquam ea!</p>
+    </dt>
+</dl>
+
+<!-- Modal -->
+<div id="meuModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Formulário de Contato</h2>
+
+        <form>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+</div>
+<div class="home-footer">
+    <a style="margin: 10px;" href=""> Aplicativo Conceito <br>© Todos o direitos reservados - AMINO QUIMICA LTDA</a>
+</div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+            document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+            document.body.style.backgroundColor = "white";
+        }
+    </script>
+
+<script>
+    // Obter elementos
+    var modal = document.getElementById("meuModal");
+    var btn = document.getElementById("abrirModal");
+    var span = document.getElementsByClassName("close")[0];
+
+    // Quando o botão for clicado, abrir o modal
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+
+    // Quando o botão de fechar (x) for clicado, fechar o modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // Fechar o modal ao clicar fora do conteúdo do modal
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+<!-- HTML:
+ - O botão Abrir Formulário dispara o pop-up.
+ - O modal (div com id meuModal) contém o formulário.
+CSS:
+ - A classe .modal define o estilo do pop-up (inicialmente oculto).
+ - .modal-content estiliza a janela do formulário.
+JavaScript:
+ - Mostra o modal ao clicar no botão e esconde quando o botão de fechar (x) ou fora do modal é clicado. -->
+
+</body>
+</html>
