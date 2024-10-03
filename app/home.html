@@ -95,6 +95,18 @@
 
                 <!-- Outros cards de notícias -->
             </div>
+            <div class="item-3">
+                <div class="w3-content w3-display-container">
+                    <img class="mySlides" src="https://www.amino.com.br/wp-content/uploads/2024/06/colchao-poliuretano-amino.webp" style="width:100%">
+                    <img class="mySlides" src="https://www.amino.com.br/wp-content/uploads/2024/06/gondola-poliuretano-amino.webp" style="width:100%">
+                    <img class="mySlides" src="https://www.amino.com.br/wp-content/uploads/2022/04/dublagem-pu-3.png" style="width:100%">
+                    <img class="mySlides" src="https://www.amino.com.br/wp-content/uploads/2024/06/piso-poliuretano-amino.webp" style="width:100%">
+                  
+                    <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+                    <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+                  </div>
+            </div>
+        </div>
         </div>
 
         <!-- Rodapé da Página -->
@@ -104,7 +116,28 @@
         </div>
     </div>
 
-    <!-- Scripts -->
+    <!-- Script Slide -->
+    <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
+        
+        function plusDivs(n) {
+          showDivs(slideIndex += n);
+        }
+        
+        function showDivs(n) {
+          var i;
+          var x = document.getElementsByClassName("mySlides");
+          if (n > x.length) {slideIndex = 1}
+          if (n < 1) {slideIndex = x.length}
+          for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+          }
+          x[slideIndex-1].style.display = "block";  
+        }
+        </script>
+
+    <!-- Scripts Menu Lateral -->
     <script>
         function openNav() {
             document.getElementById("mySidenav").style.width = "250px";
