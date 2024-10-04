@@ -246,7 +246,7 @@ h1{
     grid-template-columns: 2fr 1fr; /* Proporção melhorada para as colunas */
     grid-template-rows: auto; /* Ajusta a altura automaticamente */
     margin: 20px; /* Maior margem para espaçamento */
-    max-width: 100%;
+    width: 100%;
     height: auto; /* Deixa a altura automática, ajustando conforme o conteúdo */
     border-radius: 10px 10px 0 0;
     background-color: #ffffff;
@@ -273,6 +273,7 @@ h1{
     padding: 20px; /* Espaçamento interno */
     background-color: #f8f8f8; /* Fundo claro para destaque */
     box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Sombra para o card */
+	float: left;
 }
 
 .item-3 {
@@ -285,6 +286,23 @@ h1{
     box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Sombra para o card */
 }
 
+@media screen and (max-width: 500px) {
+	.home-body{
+		margin: 5px;
+		max-width: 100%;
+	}
+	.home-body #noticia-titulo{
+		font-size: 30px;
+	}
+	.item-2{
+		grid-column: 1 / 2; /* Ocupa a segunda coluna */
+		grid-row: 2 / 3; /* Ocupa a altura de 2 linhas */
+	}
+	.item-3{
+		grid-column: 1 / 2; /* Ocupa a segunda coluna */
+		grid-row: 3 / 4; /* Ocupa a altura de 2 linhas */
+	}
+}
 .news-card {
     margin-bottom: 20px; /* Espaçamento entre os cards */
     background-color: white;
