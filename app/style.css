@@ -444,7 +444,6 @@ h1{
 	transition: 0.3s;
 }
 .card-itens{
-	border: 1px solid black;
     border-radius: 10px;
     grid-column: 1 / 3; /* Ocupa a primeira coluna */
     grid-row: 2; /* Primeira linha */
@@ -459,4 +458,15 @@ h1{
 	position: relative;
 	margin: 10px;
 }
+.card-text{
+	margin: 5px;
+	text-align: justify;
+}
 /* -------------------------------------- X --------------------------------------------------- */
+/* @media screen and (prefers-color-scheme: dark) {
+	
+	.sidenav{
+		color-scheme: dark;
+	}
+	
+} */
