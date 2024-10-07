@@ -246,7 +246,7 @@ h1{
     grid-gap: 20px; /* Maior espaço entre os blocos */
     grid-template-columns: 2fr 1fr; /* Proporção melhorada para as colunas */
     grid-template-rows: auto; /* Ajusta a altura automaticamente */
-    margin: 20px; /* Maior margem para espaçamento */
+    margin: 0px; /* Maior margem para espaçamento */
     width: 100%;
     height: auto; /* Deixa a altura automática, ajustando conforme o conteúdo */
     border-radius: 10px 10px 0 0;
@@ -337,6 +337,7 @@ h1{
   h4{
 	text-align: center;
   }
+  /* --------------------------------- X -------------------------- */
   /* ------------------- Componetes  Noticias ----------------- */
   #noticia-titulo{
 	margin: 3px;
@@ -399,7 +400,7 @@ h1{
 	font-size:50px;
 	text-align: center;
 }
-/* --------------------------------------------------------------- */
+/* ------------------------------ X ---------------------------------- */
 /* ----------- Responsividade home para telas menores que 750 pixels (Celulares) ----------------- */
 @media screen and (max-width: 750px) { 
 	.home-body{
@@ -408,6 +409,10 @@ h1{
 	}
 	.home-body #noticia-titulo{
 		font-size: 30px;
+	}
+	.titulo-header{
+		text-align: center;
+		font-size: 40px;
 	}
 	.item-1{
 		grid-column: 1 / 3; /* Ocupa a primeira e a segunda coluna*/
@@ -425,3 +430,33 @@ h1{
 		font-size: 15px;
 	}
 }
+/* ------------------------ Pagina Busca --------------------------- */
+.result-card{
+	margin: 5px;
+	position: relative;
+	width: 100%;
+	border-color: #003366;
+	border-style: solid;
+	border-radius: 10px;
+	text-decoration: none;
+	font-size: 18px;
+	color: #818181;
+	transition: 0.3s;
+}
+.card-itens{
+	border: 1px solid black;
+    border-radius: 10px;
+    grid-column: 1 / 3; /* Ocupa a primeira coluna */
+    grid-row: 2; /* Primeira linha */
+    padding: 20px; /* Espaçamento interno */
+    background-color: #f8f8f8; /* Fundo claro para destaque */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Sombra para o card */
+	max-height: 650px;
+}
+.icon-card{
+	max-width: 40px;
+	max-height: 40px;
+	position: relative;
+	margin: 10px;
+}
+/* -------------------------------------- X --------------------------------------------------- */
