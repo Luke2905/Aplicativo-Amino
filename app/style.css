@@ -451,7 +451,7 @@ h1{
     padding: 20px; /* Espaçamento interno */
     background-color: #f8f8f8; /* Fundo claro para destaque */
     box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Sombra para o card */
-	max-height: 650px;
+	max-height: auto;
 }
 .icon-card{
 	max-width: 40px;
