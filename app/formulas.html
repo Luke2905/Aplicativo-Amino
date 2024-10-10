@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="style-responsive.css" media="screen" />
     <link rel="icon" type="image/png" href="https://www.amino.com.br/wp-content/themes/amino/assets/img/amino-dark-logo.svg"/> <!-- colocar icone na aba do site -->
+    <!-- Java Script Externo -->
+    <script src="javascript/script.js"></script>
     <title>Fórmulas</title>
     <style>
         /* Estilo do fundo do modal */
@@ -93,112 +96,65 @@
     <div id="main">
         <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
         <div class="form-header">
-    <h1 class="titulo-header">Fórmulas</h1>
+     <h1 class="titulo-header">Fórmulas</h1> 
         </div>
-        <button class="botao" id="abrirModal">Abrir Formulário</button>
-<dl>
-    <dt class="formula-item" style="font-size:30px;cursor:pointer" >1
-        <p id="formula-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur quasi eveniet doloribus animi impedit labore blanditiis, ullam fugit provident hic est asperiores voluptatum, mollitia in aut dolore repellendus aliquam ea!</p>
-    </dt>
-    <dt class="formula-item" style="font-size:30px;cursor:pointer" >1
-        <p id="formula-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur quasi eveniet doloribus animi impedit labore blanditiis, ullam fugit provident hic est asperiores voluptatum, mollitia in aut dolore repellendus aliquam ea!</p>
-    </dt>
-    <dt class="formula-item" style="font-size:30px;cursor:pointer" >1
-        <p id="formula-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur quasi eveniet doloribus animi impedit labore blanditiis, ullam fugit provident hic est asperiores voluptatum, mollitia in aut dolore repellendus aliquam ea!</p>
-    </dt>
-    <dt class="formula-item" style="font-size:30px;cursor:pointer" >1
-        <p id="formula-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur quasi eveniet doloribus animi impedit labore blanditiis, ullam fugit provident hic est asperiores voluptatum, mollitia in aut dolore repellendus aliquam ea!</p>
-    </dt>
-    <dt class="formula-item" style="font-size:30px;cursor:pointer" >1
-        <p id="formula-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur quasi eveniet doloribus animi impedit labore blanditiis, ullam fugit provident hic est asperiores voluptatum, mollitia in aut dolore repellendus aliquam ea!</p>
-    </dt>
-    <dt class="formula-item" style="font-size:30px;cursor:pointer" >1
-        <p id="formula-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur quasi eveniet doloribus animi impedit labore blanditiis, ullam fugit provident hic est asperiores voluptatum, mollitia in aut dolore repellendus aliquam ea!</p>
-    </dt>
-    <dt class="formula-item" style="font-size:30px;cursor:pointer" >1
-        <p id="formula-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur quasi eveniet doloribus animi impedit labore blanditiis, ullam fugit provident hic est asperiores voluptatum, mollitia in aut dolore repellendus aliquam ea!</p>
-    </dt>
-    <dt class="formula-item" style="font-size:30px;cursor:pointer" >1
-        <p id="formula-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur quasi eveniet doloribus animi impedit labore blanditiis, ullam fugit provident hic est asperiores voluptatum, mollitia in aut dolore repellendus aliquam ea!</p>
-    </dt>
-    <dt class="formula-item" style="font-size:30px;cursor:pointer" >1
-        <p id="formula-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur quasi eveniet doloribus animi impedit labore blanditiis, ullam fugit provident hic est asperiores voluptatum, mollitia in aut dolore repellendus aliquam ea!</p>
-    </dt>
-    <dt class="formula-item" style="font-size:30px;cursor:pointer" >1
-        <p id="formula-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur quasi eveniet doloribus animi impedit labore blanditiis, ullam fugit provident hic est asperiores voluptatum, mollitia in aut dolore repellendus aliquam ea!</p>
-    </dt>
-</dl>
+         <button class="botao" id="abrirModal">Abrir Formulário</button>
+            <dl>
+                <dt class="formula-item" style="font-size:30px;cursor:pointer" >1
+                    <p id="formula-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur quasi eveniet doloribus animi impedit labore blanditiis, ullam fugit provident hic est asperiores voluptatum, mollitia in aut dolore repellendus aliquam ea!</p>
+                </dt>
+                <dt class="formula-item" style="font-size:30px;cursor:pointer" >1
+                    <p id="formula-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur quasi eveniet doloribus animi impedit labore blanditiis, ullam fugit provident hic est asperiores voluptatum, mollitia in aut dolore repellendus aliquam ea!</p>
+                </dt>
+                <dt class="formula-item" style="font-size:30px;cursor:pointer" >1
+                    <p id="formula-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur quasi eveniet doloribus animi impedit labore blanditiis, ullam fugit provident hic est asperiores voluptatum, mollitia in aut dolore repellendus aliquam ea!</p>
+                </dt>
+                <dt class="formula-item" style="font-size:30px;cursor:pointer" >1
+                    <p id="formula-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur quasi eveniet doloribus animi impedit labore blanditiis, ullam fugit provident hic est asperiores voluptatum, mollitia in aut dolore repellendus aliquam ea!</p>
+                </dt>
+                <dt class="formula-item" style="font-size:30px;cursor:pointer" >1
+                    <p id="formula-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur quasi eveniet doloribus animi impedit labore blanditiis, ullam fugit provident hic est asperiores voluptatum, mollitia in aut dolore repellendus aliquam ea!</p>
+                </dt>
+                <dt class="formula-item" style="font-size:30px;cursor:pointer" >1
+                    <p id="formula-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur quasi eveniet doloribus animi impedit labore blanditiis, ullam fugit provident hic est asperiores voluptatum, mollitia in aut dolore repellendus aliquam ea!</p>
+                </dt>
+                <dt class="formula-item" style="font-size:30px;cursor:pointer" >1
+                    <p id="formula-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur quasi eveniet doloribus animi impedit labore blanditiis, ullam fugit provident hic est asperiores voluptatum, mollitia in aut dolore repellendus aliquam ea!</p>
+                </dt>
+                <dt class="formula-item" style="font-size:30px;cursor:pointer" >1
+                    <p id="formula-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur quasi eveniet doloribus animi impedit labore blanditiis, ullam fugit provident hic est asperiores voluptatum, mollitia in aut dolore repellendus aliquam ea!</p>
+                </dt>
+                <dt class="formula-item" style="font-size:30px;cursor:pointer" >1
+                    <p id="formula-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur quasi eveniet doloribus animi impedit labore blanditiis, ullam fugit provident hic est asperiores voluptatum, mollitia in aut dolore repellendus aliquam ea!</p>
+                </dt>
+                <dt class="formula-item" style="font-size:30px;cursor:pointer" >1
+                    <p id="formula-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur quasi eveniet doloribus animi impedit labore blanditiis, ullam fugit provident hic est asperiores voluptatum, mollitia in aut dolore repellendus aliquam ea!</p>
+                </dt>
+            </dl>
 
-<!-- Modal -->
-<div id="meuModal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>Formulário de Contato</h2>
+            <!-- Modal -->
+            <div id="meuModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Formulário de Contato</h2>
 
-        <form>
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" required>
-            
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            
-            <input type="submit" value="Enviar">
-        </form>
+                    <form>
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome" required>
+                        
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                        
+                        <input type="submit" value="Enviar">
+                    </form>
+                </div>
+            </div>
+        <!-- Rodapé da Página -->
+        <div class="home-footer">
+            <p> Aplicativo Conceito</p>
+            <p>© Todos o direitos reservados - AMINO QUIMICA LTDA</p>
+            <p>Desenvolvido por Lucas de Barros - Assistente Administrativo Operacional</p>
+        </div>
     </div>
-</div>
-<div class="home-footer">
-    <a style="margin: 10px;"> Aplicativo Conceito <br>© Todos o direitos reservados - AMINO QUIMICA LTDA</a><br>
-    <a >Desenvolvido por Lucas de Barros - Assistente Administrativo Operacional</a>
-</div>
-    </div>
-
-    <!-- Scripts -->
-    <script>
-        function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
-            document.getElementById("main").style.marginLeft = "250px";
-            document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-        }
-
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-            document.getElementById("main").style.marginLeft = "0";
-            document.body.style.backgroundColor = "white";
-        }
-    </script>
-
-<script>
-    // Obter elementos
-    var modal = document.getElementById("meuModal");
-    var btn = document.getElementById("abrirModal");
-    var span = document.getElementsByClassName("close")[0];
-
-    // Quando o botão for clicado, abrir o modal
-    btn.onclick = function() {
-        modal.style.display = "block";
-    }
-
-    // Quando o botão de fechar (x) for clicado, fechar o modal
-    span.onclick = function() {
-        modal.style.display = "none";
-    }
-
-    // Fechar o modal ao clicar fora do conteúdo do modal
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
-</script>
-
-<!-- HTML:
- - O botão Abrir Formulário dispara o pop-up.
- - O modal (div com id meuModal) contém o formulário.
-CSS:
- - A classe .modal define o estilo do pop-up (inicialmente oculto).
- - .modal-content estiliza a janela do formulário.
-JavaScript:
- - Mostra o modal ao clicar no botão e esconde quando o botão de fechar (x) ou fora do modal é clicado. -->
-
 </body>
 </html>
