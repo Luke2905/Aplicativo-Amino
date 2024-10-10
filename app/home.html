@@ -6,6 +6,9 @@
     <title>Home</title>
     <!-- Estilo externo -->
     <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="style-responsive.css" media="screen" />
+    <!-- Java Script Externo -->
+    <script src="javascript/script.js"></script>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="icon" type="image/png" href="https://www.amino.com.br/wp-content/themes/amino/assets/img/amino-dark-logo.svg"/> <!-- colocar icone na aba do site -->
@@ -109,13 +112,13 @@
                   </div>
             </div>
         </div>
-        </div>
-
         <!-- Rodapé da Página -->
         <div class="home-footer">
-            <a style="margin: 10px;"> Aplicativo Conceito <br>© Todos o direitos reservados - AMINO QUIMICA LTDA</a><br>
-            <a >Desenvolvido por Lucas de Barros - Assistente Administrativo Operacional</a>
+            <p> Aplicativo Conceito</p>
+            <p>© Todos o direitos reservados - AMINO QUIMICA LTDA</p>
+            <p>Desenvolvido por Lucas de Barros - Assistente Administrativo Operacional</p>
         </div>
+    </div>
     </div>
 
     <!-- Script Slide -->
@@ -126,33 +129,6 @@
         function plusDivs(n) {
           showDivs(slideIndex += n);
         }
-        
-        function showDivs(n) {
-          var i;
-          var x = document.getElementsByClassName("mySlides");
-          if (n > x.length) {slideIndex = 1}
-          if (n < 1) {slideIndex = x.length}
-          for (i = 0; i < x.length; i++) {
-            x[i].style.display = "none";  
-          }
-          x[slideIndex-1].style.display = "block";  
-        }
         </script>
-
-    <!-- Scripts Menu Lateral -->
-    <script>
-        function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
-            document.getElementById("main").style.marginLeft = "250px";
-            document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-        }
-
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-            document.getElementById("main").style.marginLeft = "0";
-            document.body.style.backgroundColor = "white";
-        }
-    </script>
-
 </body>
 </html>
