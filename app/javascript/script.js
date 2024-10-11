@@ -60,7 +60,6 @@ var slideIndex = 1;
            modal.style.display = "none";
        }
    }
-
 /* HTML:
  - O botão Abrir Formulário dispara o pop-up.
  - O modal (div com id meuModal) contém o formulário.
@@ -69,3 +68,17 @@ CSS:
  - .modal-content estiliza a janela do formulário.
 JavaScript:
  - Mostra o modal ao clicar no botão e esconde quando o botão de fechar (x) ou fora do modal é clicado. */
+
+/*------------------- ... -------------------------------*/ 
+// function selectSegmento(){
+
+//     var prop_case = document.getElementById("prop-case");
+//     var select = document.getElementById("segmento-atuacao");
+//     var valor = select.value;
+
+//         if(valor == "Case"){
+
+            
+//             prop_case.style.display = "block";
+//         }
+// }
