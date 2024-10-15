@@ -45,14 +45,14 @@
     
             <!-- Cabeçalho da Página -->
             <div class="home-header">
-                <h1 class="titulo-header"> Busca Avancçada por Propriedades </h1>
+                <h1 class="titulo-header"> Busca Avançada por Propriedades </h1>
             </div>
                 <div class="container">
                     <form  class="search-form">
                         <div class="full-width">
                             <select  id="segmento-atuacao">
                                 <option  value="">Selecionar...</option>
-                                <option  value="1">Aditivos de Performace</option>
+                                <option  value="Aditivo">Aditivos de Performace</option>
                                 <option  value="Sistema">Sistema PU</option>
                                 <option  value="Case">CASE</option>
                                 <!-- Adicionar outras opções conforme necessário -->
@@ -62,12 +62,105 @@
                     <!--  Formulário de Aditivos  -->
                     <form id="prop-form" action="busca-reultado.html" class="search-form">
                         <div>
+                            <label for="ffo-yield">Teor de Agua</label>
+                            <input id="input-busca" type="text" id="ffo-yield-min" placeholder="min">
+                            <input id="input-busca" type="text" id="ffo-yield-max" placeholder="max">
+                        </div>
+                        <div>
+                            <label for="dividend-yield">Pureza</label>
+                            <input id="input-busca" type="text" id="dividend-yield-min" placeholder="min">
+                            <input id="input-busca" type="text" id="dividend-yield-max" placeholder="max">
+                        </div>
+                        <div>
+                            <label for="p-vp">Densidade</label>
+                            <input id="input-busca" type="text" id="p-vp-min" placeholder="min">
+                            <input id="input-busca" type="text" id="p-vp-max" placeholder="max">
+                        </div>
+                        <div>
+                            <label for="valor-mercado">Viscosidade</label>
+                            <input id="input-busca" type="text" id="valor-mercado-min" placeholder="min">
+                            <input id="input-busca" type="text" id="valor-mercado-max" placeholder="max">
+                        </div>
+                        <div>
+                            <label for="qtd-imoveis">Peso Especifico</label>
+                            <input id="input-busca" type="text" id="qtd-imoveis-min" placeholder="min">
+                            <input id="input-busca" type="text" id="qtd-imoveis-max" placeholder="max">
+                        </div>
+                        <div>
+                            <label for="preco-m2">Teor de Estanho</label>
+                            <input id="input-busca" type="text" id="preco-m2-min" placeholder="min">
+                            <input id="input-busca" type="text" id="preco-m2-max" placeholder="max">
+                        </div>
+                        <div>
+                            <label for="aluguel-m2">Estanho S++</label>
+                            <input id="input-busca" type="text" id="aluguel-m2-min" placeholder="min">
+                            <input id="input-busca" type="text" id="aluguel-m2-max" placeholder="max">
+                        </div>
+                        <div>
+                            <label for="cap-rate">Teor de Hodroxila</label>
+                            <input id="input-busca" type="text" id="cap-rate-min" placeholder="min">
+                            <input id="input-busca" type="text" id="cap-rate-max" placeholder="max">
+                        </div>
+                        <div>
+                            <label for="vacancia">Acidez</label>
+                            <input id="input-busca" type="text" id="vacancia-min" placeholder="min">
+                            <input id="input-busca" type="text" id="vacancia-max" placeholder="max">
+                        </div>
+                        <div>
+                            <label for="vacancia">Fineza</label>
+                            <input id="input-busca" type="text" id="vacancia-min" placeholder="min">
+                            <input id="input-busca" type="text" id="vacancia-max" placeholder="max">
+                        </div>
+                        <div>
+                            <label for="vacancia">Tonalidade</label>
+                            <input id="input-busca" type="text" id="vacancia-min" placeholder="min">
+                            <input id="input-busca" type="text" id="vacancia-max" placeholder="max">
+                        </div>
+                        <div>
+                            <label for="vacancia">Matéria Seca</label>
+                            <input id="input-busca" type="text" id="vacancia-min" placeholder="min">
+                            <input id="input-busca" type="text" id="vacancia-max" placeholder="max">
+                        </div>
+                        <div>
+                            <label for="vacancia">Teor de Sólidos</label>
+                            <input id="input-busca" type="text" id="vacancia-min" placeholder="min">
+                            <input id="input-busca" type="text" id="vacancia-max" placeholder="max">
+                        </div>
+                        <div>
+                            <label for="vacancia">PH</label>
+                            <input id="input-busca" type="text" id="vacancia-min" placeholder="min">
+                            <input id="input-busca" type="text" id="vacancia-max" placeholder="max">
+                        </div>
+                        <div>
+                            <label for="vacancia">Tempo de pele</label>
+                            <input id="input-busca" type="text" id="vacancia-min" placeholder="min">
+                            <input id="input-busca" type="text" id="vacancia-max" placeholder="max">
+                        </div>
+                        <div>
+                            <label for="vacancia">Dureza</label>
+                            <input id="input-busca" type="text" id="vacancia-min" placeholder="min">
+                            <input id="input-busca" type="text" id="vacancia-max" placeholder="max">
+                        </div>
+                        <div class="button-container full-width">
+                            <button type="submit">Buscar</button>
+                        </div>
+                    </form>
+
+                    <!-- Formulário Sistema PU -->
+
+                    <form id="prop-form-pu" action="busca-reultado.html" class="search-form">
+                        <div>
                             <label for="ffo-yield">Densidade</label>
                             <input id="input-busca" type="text" id="ffo-yield-min" placeholder="min">
                             <input id="input-busca" type="text" id="ffo-yield-max" placeholder="max">
                         </div>
                         <div>
                             <label for="dividend-yield">Tempo de Crescimento</label>
+                            <input id="input-busca" type="text" id="dividend-yield-min" placeholder="min">
+                            <input id="input-busca" type="text" id="dividend-yield-max" placeholder="max">
+                        </div>
+                        <div>
+                            <label for="dividend-yield">Tempo Desmoldagem</label>
                             <input id="input-busca" type="text" id="dividend-yield-min" placeholder="min">
                             <input id="input-busca" type="text" id="dividend-yield-max" placeholder="max">
                         </div>
@@ -106,6 +199,11 @@
                             <input id="input-busca" type="text" id="vacancia-min" placeholder="min">
                             <input id="input-busca" type="text" id="vacancia-max" placeholder="max">
                         </div>
+                        <div>
+                            <label for="vacancia">Dureza</label>
+                            <input id="input-busca" type="text" id="vacancia-min" placeholder="min">
+                            <input id="input-busca" type="text" id="vacancia-max" placeholder="max">
+                        </div>
                         <div class="button-container full-width">
                             <button type="submit">Buscar</button>
                         </div>
@@ -122,18 +220,21 @@
             <script>
                 var btn = document.getElementById("segmento-atuacao");
                 var formulário = document.getElementById("prop-form");
+                var formulário_PU = document.getElementById("prop-form-pu");
 
                 btn.addEventListener("change", function() { //change - evendo de mudança de item do select
                     var valor = btn.value;
 
-                    if (valor == "1") {
+                    if (valor == "Aditivo") {
                         formulário.style.display = "block";
                     } else {
                         formulário.style.display = "none";
                     }
 
-                    if (valor == "2") {
-                        alert("teste 2");
+                    if (valor == "Sistema") {
+                        formulário_PU.style.display = "block";
+                    } else {
+                        formulário_PU.style.display = "none";
                     }
                 });
             </script>
