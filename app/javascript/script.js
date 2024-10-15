@@ -38,28 +38,6 @@ var slideIndex = 1;
             document.getElementById("main").style.marginLeft = "0";
             document.body.style.backgroundColor = "white";
         }
-/* -------------------- Pop up form --------------------------- */
-   // Obter elementos
-   var modal = document.getElementById("meuModal");
-   var btn = document.getElementById("abrirModal");
-   var span = document.getElementsByClassName("close")[0];
-
-   // Quando o botão for clicado, abrir o modal
-   btn.onclick = function() {
-       modal.style.display = "block";
-   }
-
-   // Quando o botão de fechar (x) for clicado, fechar o modal
-   span.onclick = function() {
-       modal.style.display = "none";
-   }
-
-   // Fechar o modal ao clicar fora do conteúdo do modal
-   window.onclick = function(event) {
-       if (event.target == modal) {
-           modal.style.display = "none";
-       }
-   }
 /* HTML:
  - O botão Abrir Formulário dispara o pop-up.
  - O modal (div com id meuModal) contém o formulário.
