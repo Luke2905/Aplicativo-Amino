@@ -25,7 +25,7 @@
         /* Estilo do conteúdo do modal */
         .modal-content {
             background-color: #fefefe;
-            margin: 15% auto;
+            margin: 8% auto;
             padding: 20px;
             border: 1px solid #888;
             width: 40%;
@@ -51,8 +51,9 @@
         input[type="text"], input[type="email"], input[type="submit"] {
             width: 100%;
             padding: 10px;
-            margin: 5px 0 10px 0;
+            margin: 10px 0 10px 0;
             box-sizing: border-box;
+            border-radius: 10px;
         }
         #abrirModal{
             margin-left: 80%;
@@ -61,10 +62,19 @@
             box-shadow: inset;
             border-radius: 10px;
         }
+        #select-cad{
+            width: 200px;
+            height: 40px;
+            border-radius: 10px;
+        }
         @media screen and (max-width: 750px) {
 
             #abrirModal{
                 margin-left: 45%;
+            }
+            .modal-content{
+                margin: 8% auto;
+                min-width: 350px;
             }
             
         }
@@ -136,14 +146,28 @@
             <div id="meuModal" class="modal">
                 <div class="modal-content">
                     <span class="close">&times;</span>
-                    <h2>Formulário de Contato</h2>
+                    <h2>Cadastro de Fórmula</h2>
 
                     <form>
-                        <label for="nome">Nome:</label>
+                        <label for="nome">Nome</label>
                         <input type="text" id="nome" name="nome" required>
                         
-                        <label for="email">Email:</label>
+                        <label for="email">Codigo:</label>
+                        <input type="text" id="cod" name="codigo" required>
+
+                        <label for="email">Preço:</label>
+                        <input type="text" id="email" name="email" required>
+                        
+                        <label for="email">Descrição:</label>
                         <input type="email" id="email" name="email" required>
+
+                        <label for="email">Segmento</label><br>
+                        <select id="select-cad">
+                            <option  value="">Selecionar...</option>
+                            <option  value="Aditivo">Aditivos de Performace</option>
+                            <option  value="Sistema">Sistema PU</option>
+                            <option  value="Case">CASE</option>
+                        </select>
                         
                         <input type="submit" value="Enviar">
                     </form>
@@ -156,5 +180,28 @@
             <p>Desenvolvido por Lucas de Barros - Assistente Administrativo Operacional</p>
         </div>
     </div>
+    <script>
+                    // Obter elementos
+            var modal = document.getElementById("meuModal");
+            var btn = document.getElementById("abrirModal");
+            var span = document.getElementsByClassName("close")[0];
+
+            // Quando o botão for clicado, abrir o modal
+            btn.onclick = function() {
+                modal.style.display = "block";
+            }
+
+            // Quando o botão de fechar (x) for clicado, fechar o modal
+            span.onclick = function() {
+                modal.style.display = "none";
+            }
+
+            // Fechar o modal ao clicar fora do conteúdo do modal
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+    </script>
 </body>
 </html>
