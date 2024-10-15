@@ -565,6 +565,40 @@ h1{
 	height: 50px;
 	font-size: 15px;
 }
+
+/* ------------------- Elementos Chat ------------------- */
+.chat{
+	grid-column: 1 / 3;
+	width: 100%;
+	height: 400px;
+}
+.chat-mensagens{
+	height: 360px;
+	overflow: auto;
+}
+#messageInput{
+	width: 90%;
+	height: 40px;
+	border-radius: 8px;
+	border: 1px solid gray;
+}
+#btn-enviar {
+    height: 40px;
+    background-color: #003366;
+    color: white;
+    border-radius: 8px;
+}
+.mensagem.enviada{
+    background-color: aqua;
+    margin-left: 70%;
+    border-radius: 10px 10px 0 10px;
+}
+.mensagem.resposta{
+    margin-right: 70%;
+    width: 150px;
+    background-color: #b6afaf;
+    border-radius: 10px 10px 10px 0px;
+}
 /* -------------------------------------- X --------------------------------------------------- */
 /* @media screen and (prefers-color-scheme: dark) {
 	
