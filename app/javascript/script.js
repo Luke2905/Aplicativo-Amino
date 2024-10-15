@@ -60,3 +60,40 @@ JavaScript:
 //             prop_case.style.display = "block";
 //         }
 // }
+/* ------------------ Funções Chat ------------------ */
+function enviarMensagem(){
+
+  var  texto = document.getElementById("messageInput");
+  const mensagem = texto.value;
+
+  if(mensagem === '') return; //-> Não envia mensagens vazias
+
+  exibeMensagem(mensagem, 'enviada');
+
+  // -> Simula a mensagen automatica
+
+  if(mensagem === 'oi'){
+
+    setTimeout(() => {
+      exibeMensagem('Esta é uma resposta automática!', 'resposta'); 
+    }, 1000);
+
+  }
+
+
+  //  alert(mensagem);
+
+  // -> limpa o input do chat
+  messageInput.value = '';
+
+}
+
+function exibeMensagem(text, type) {
+  const messageElement = document.createElement('div'); // -> Cria um elemento (Div) para a mensagem
+  messageElement.classList.add('mensagem', type); // -> lista as mensagens
+  messageElement.innerHTML = `<p>${text}</p>`; // -> exibe a mensagem
+  chatMessages.appendChild(messageElement);
+
+  // Rola para o final da lista de mensagens
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+}
