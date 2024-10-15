@@ -425,7 +425,8 @@ h1{
 	}
 	.titulo-header{
 		text-align: center;
-		font-size: 40px;
+		font-size: 175%;
+		margin: 12% 0;
 	}
 	.item-1{
 		grid-column: 1 / 3; /* Ocupa a primeira e a segunda coluna*/
@@ -512,7 +513,7 @@ h1{
 	gap: 15px;
 }
 .search-form label {
-	font-size: 14px;
+	font-size: 18px;
 	color: #333;
 }
 .search-form input, .search-form select {
@@ -553,6 +554,10 @@ h1{
 	height: 50px;
 }
 #prop-form{
+	display: none;
+	transition: 0.5s;
+}
+#prop-form-pu{
 	display: none;
 	transition: 0.5s;
 }
