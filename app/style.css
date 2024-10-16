@@ -464,6 +464,9 @@ h1{
 	#img-aviso{
 		max-width: 350px;
 	}
+	#messageInput{
+		max-width: 70%;
+	}
 }
 /* ------------------------ Pagina Busca --------------------------- */
 .result-card{
@@ -572,9 +575,13 @@ h1{
 	width: 100%;
 	height: 400px;
 }
+.chat p{
+	font-size: 13px;
+}
 .chat-mensagens{
 	height: 360px;
-	overflow: auto;
+	overflow-y: auto;
+	overflow-x: hidden;
 }
 #messageInput{
 	width: 90%;
@@ -592,10 +599,13 @@ h1{
     background-color: aqua;
     margin-left: 70%;
     border-radius: 10px 10px 0 10px;
+	max-width: 60%; /* Limita a largura das mensagens */
+    word-wrap: break-word; /* Quebra palavras longas */
+    box-sizing: border-box;
 }
 .mensagem.resposta{
     margin-right: 70%;
-    width: 150px;
+    width: 200px;
     background-color: #b6afaf;
     border-radius: 10px 10px 10px 0px;
 }
