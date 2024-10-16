@@ -64,7 +64,7 @@ JavaScript:
 function enviarMensagem(){
 
   var  texto = document.getElementById("messageInput");
-  const mensagem = texto.value;
+  const mensagem = texto.value.toLowerCase();
 
   if(mensagem === '') return; //-> Não envia mensagens vazias
 
@@ -72,10 +72,10 @@ function enviarMensagem(){
 
   // -> Simula a mensagen automatica
 
-  if(mensagem === 'oi'){
+  if(mensagem === 'oi', 'olá', 'bom dia', 'boa tarde'){
 
     setTimeout(() => {
-      exibeMensagem('Esta é uma resposta automática!', 'resposta'); 
+      exibeMensagem('Olá, eu sou o assistente de troubleshooting da AMINO. Como Posso ajudar?', 'resposta'); 
     }, 1000);
 
   }
