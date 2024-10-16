@@ -50,7 +50,7 @@
                 </div>
                 <div class="chat-input">
                     <input type="text" id="messageInput" placeholder="Digite sua mensagem..." />
-                    <button id="btn-enviar" onclick="enviarMensagem()">Enviar</button>
+                    <input type="submit" id="btn-enviar" onclick="enviarMensagem()"/>
                 </div>
             </div>
         </div>
@@ -62,5 +62,17 @@
             <p>Desenvolvido por Lucas de Barros - Assistente Administrativo Operacional</p>
         </div>
     </div>
+
+    <script>
+        document.addEventListener("keypress", function(e) { /* -> Funcão para enviar mensagen usando enter do teclado*/
+            if(e.key === 'Enter') {
+            
+                var btn = document.querySelector("#btn-enviar");
+                
+                btn.click();
+            
+            }
+            });
+    </script>
 </body>
 </html>
