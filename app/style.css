@@ -582,6 +582,7 @@ h1{
 	height: 360px;
 	overflow-y: auto;
 	overflow-x: hidden;
+	margin: 10px 0px;
 }
 #messageInput{
 	width: 90%;
