@@ -72,12 +72,17 @@ function enviarMensagem(){
 
   // -> Simula a mensagen automatica
 
-  if(mensagem === 'oi', 'olá', 'bom dia', 'boa tarde'){
+  if(mensagem === 'oi'){
 
     setTimeout(() => {
       exibeMensagem('Olá, eu sou o assistente de troubleshooting da AMINO. Como Posso ajudar?', 'resposta'); 
     }, 1000);
 
+  }else{
+
+    setTimeout(() => {
+      exibeMensagem('Desculpe, mas não entendi o que você quis dizer :(', 'resposta'); 
+    }, 1000);
   }
 
 
