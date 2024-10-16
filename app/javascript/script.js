@@ -72,21 +72,20 @@ function enviarMensagem(){
 
   // -> Simula a mensagen automatica
 
-  if(mensagem === 'oi'){
+  switch (mensagem){
 
-    setTimeout(() => {
-      exibeMensagem('Olá, eu sou o assistente de troubleshooting da AMINO. Como Posso ajudar?', 'resposta'); 
-    }, 1000);
+      default:
+            setTimeout(() => {
+                  exibeMensagem('Desculpe, mas não entendi o que você quis dizer :(', 'resposta'); 
+            }, 1000); 
+      break;
 
-  }else{
+      case 'oi': setTimeout(() => {
+            exibeMensagem('Olá, eu sou o assistente de troubleshooting da AMINO. Como posso ajudar?', 'resposta'); 
+          }, 1000); 
+      break;
+  } 
 
-    setTimeout(() => {
-      exibeMensagem('Desculpe, mas não entendi o que você quis dizer :(', 'resposta'); 
-    }, 1000);
-  }
-
-
-  //  alert(mensagem);
 
   // -> limpa o input do chat
   messageInput.value = '';
