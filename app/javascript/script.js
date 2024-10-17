@@ -78,6 +78,9 @@ function enviarMensagem(){
             setTimeout(() => {
                   exibeMensagem('Desculpe, mas não entendi o que você quis dizer :(', 'resposta'); 
             }, 1000); 
+            setTimeout(() => {
+              exibeMensagem('Digite help para ver a lista de comandos', 'resposta'); 
+        }, 2500); 
       break;
 
       case 'oi': setTimeout(() => {
@@ -107,6 +110,15 @@ function enviarMensagem(){
             function() {
                 window.location.href = "busca.html";
           }, 3000);
+      break;
+
+      case 'help': setTimeout(() => {
+            exibeMensagem('Certo, ire lhe mostrar uma lista com os principais comandos de ação ', 'resposta');
+          }, 1000); ;
+          setTimeout(() => {
+            exibeMensagem('Comandos: home - Redireciona para a home', 'resposta'); 
+            exibeMensagem('busca - Redireciona para a Pagina de Busca Avançada', 'resposta');
+          }, 2000); ;
       break;
   } 
 
