@@ -22,10 +22,17 @@
 	background-color: #003366;
 	color: #ffffff;
 }
-#icon-chat{
-	font-size: 30px;
-	margin-left: 80%;
-	cursor: pointer;
+#icon-chat {
+    font-size: 50px;
+    position: fixed;
+    bottom: 20px; /* Distância do fundo da tela */
+    right: 20px; /* Distância da direita da tela */
+    z-index: 1000; /* Garante que o ícone fique acima de outros elementos */
+    transition: transform 0.3s; /* Animação suave ao interagir */
+}
+
+#icon-chat:hover {
+    transform: scale(1.1); /* Aumenta o ícone ao passar o mouse */
 }
 /* -------- PAGINA DE LOGIN -------------- */
 body{
@@ -498,10 +505,7 @@ h1{
 		height: 100px;
 	}
 	#icon-chat{
-		font-size: 50px;
-		margin-left: 70%;
-		margin-top: 90%;
-		position: fixed;
+			font-size: 40px; /* Reduz o tamanho do ícone em telas pequenas */
 	}
 }
 /* ------------------------ Pagina Busca --------------------------- */
