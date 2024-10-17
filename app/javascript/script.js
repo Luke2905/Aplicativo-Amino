@@ -84,6 +84,30 @@ function enviarMensagem(){
             exibeMensagem('Olá, eu sou o assistente de troubleshooting da AMINO. Como posso ajudar?', 'resposta'); 
           }, 1000); 
       break;
+
+      case 'lorem': setTimeout(() => {
+            exibeMensagem('lLorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe id, voluptas dolores dolore temporibus atque? Commodi veritatis dolores mollitia illo temporibus ut, provident inventore tempore soluta, excepturi fugiat consequuntur necessitatibus?', 'resposta'); 
+          }, 1000); 
+      break;
+
+      case 'home':
+      case 'voltar home': setTimeout(() => {
+            exibeMensagem('Certo, redirecionando para Home', 'resposta'); 
+          }, 1000); 
+            setTimeout(
+            function() {
+                window.location.href = "home.html";
+          }, 3000);
+      break;
+
+      case 'busca': setTimeout(() => {
+            exibeMensagem('Certo, redirecionando para Busca Avançancada por Propriedades', 'resposta'); 
+          }, 1000); 
+            setTimeout(
+            function() {
+                window.location.href = "busca.html";
+          }, 3000);
+      break;
   } 
 
 
@@ -100,4 +124,12 @@ function exibeMensagem(text, type) {
 
   // Rola para o final da lista de mensagens
   chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+function redirecionarChat(){
+  setTimeout(
+    function() {
+        window.location.href = "chat.html";
+    }, 1000);
+
 }
