@@ -23,11 +23,12 @@
 	color: #ffffff;
 }
 #icon-chat {
-    font-size: 50px;
-    position: fixed;
-    bottom: 20px; /* Distância do fundo da tela */
-    right: 20px; /* Distância da direita da tela */
-    z-index: 1000; /* Garante que o ícone fique acima de outros elementos */
+    position: fixed; /* Para manter o ícone fixo no canto */
+    bottom: 20px;
+    right: 20px;
+    font-size: 32px; /* Ajuste para que o ícone fique maior no mobile */
+    cursor: pointer;
+    z-index: 1000; /* Para garantir que o ícone não fique atrás de outros elementos */
     transition: transform 0.3s; /* Animação suave ao interagir */
 }
 
@@ -505,7 +506,9 @@ h1{
 		height: 100px;
 	}
 	#icon-chat{
-			font-size: 40px; /* Reduz o tamanho do ícone em telas pequenas */
+		font-size: 28px;
+        bottom: 15px;
+        right: 15px;
 	}
 }
 /* ------------------------ Pagina Busca --------------------------- */
