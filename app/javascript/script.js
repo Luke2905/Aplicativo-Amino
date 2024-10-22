@@ -145,3 +145,20 @@ function redirecionarChat(){
     }, 1000);
 
 }
+
+/*----------------- Select Propriedade ------------------*/
+    var btn = document.getElementById("segmento-atuacao");
+    var teste = document.getElementById("produto");
+    var produto = document.getElementById("filtro-propriedades");
+    var checkboxes = document.querySelectorAll(".check");
+
+    btn.addEventListener("change", function() {
+        var valor = btn.value;
+
+        if (valor == "1") {
+            teste.style.display = "block";
+        } 
+        if (valor == "2") {
+            alert("Teste 2");
+        }
+    });
