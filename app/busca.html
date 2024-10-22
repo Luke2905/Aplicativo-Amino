@@ -15,6 +15,87 @@
             background-color: #f4f4f4;
             margin: 0;
         }
+        .container {
+            min-height: 600px;
+            max-width: 100%;
+            margin: 5px;
+            background-color: white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .search-form label {
+            font-size: 18px;
+            color: #333;
+        }
+        .search-form input, .search-form select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .search-form .full-width {
+            grid-column: span 2;
+        }
+        .search-form .checkbox-group {
+            display: flex;
+            align-items: center;
+        }
+        .search-form .checkbox-group input {
+            margin-right: 10px;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .button-container button {
+            padding: 10px 30px;
+            background-color: #2d6da3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .button-container button:hover {
+            background-color: #1e4f76;
+        }
+        #input-busca{
+            border-color: #1e4f76;
+            height: 50px;
+        }
+        #prop-form{
+            display: none;
+            transition: 0.5s;
+        }
+        #form-aplic{
+            display: none;
+            transition: 0.5s;
+        }
+        #prop-form-pu{
+            display: none;
+            transition: 0.5s;
+        }
+        #segmento-atuacao{
+            height: 50px;
+            font-size: 15px;
+        }
+
+        @media screen and (max-width: 750px){
+            .conteudo-busca {
+                grid-column: 1 / span 3;
+                grid-row: 2;
+                min-height: 200px;
+            }
+            
+            .filtro-busca {
+                grid-column: 1 / span 3;
+                grid-row: 1;
+                height: 200px;
+                min-width: 100%;
+                overflow-y: auto;
+            }
+        }
     </style>
 </head>
 <body>
@@ -32,7 +113,7 @@
             <a href="pag-erro.html"><img class="icon" src="https://e7.pngegg.com/pngimages/900/842/png-clipart-computer-icons-encapsulated-postscript-others-angle-text.png" alt="screen"> Propriedades</a>
             <a href="pag-erro.html"><img class="icon" src="https://cdn-icons-png.flaticon.com/512/2363/2363742.png" alt="screen"> Sistema</a>
             <a href="comparativo.html"><img class="icon" src="https://cdn-icons-png.flaticon.com/512/45/45754.png" alt="screen"> Comparativo</a>
-            <a href="chat.html"><img class="icon" src="https://thumb.ac-illust.com/89/89e84c7e7bde4ad0161456287fd132ee_t.jpeg" alt="screen"> Troubleshoot</a>
+            <a href="pag-erro.html"><img class="icon" src="https://thumb.ac-illust.com/89/89e84c7e7bde4ad0161456287fd132ee_t.jpeg" alt="screen"> Troubleshoot</a>
             <a href="pag-erro.html"><img class="icon" src="https://static.vecteezy.com/system/resources/previews/008/442/086/non_2x/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg" alt="screen"> Usuários</a>
             <form action="login.html">
                 <input class="botao" type="submit" value="Sair" />
@@ -47,169 +128,124 @@
             <div class="home-header">
                 <h1 class="titulo-header"> Busca Avançada por Propriedades </h1>
             </div>
+            <!-- Conteúdo da Pagina -->
                 <div class="container">
-                    <form  class="search-form">
-                        <div class="full-width">
-                            <select  id="segmento-atuacao">
-                                <option  value="">Selecionar...</option>
-                                <option  value="Aditivo">Aditivos de Performace</option>
-                                <option  value="Sistema">Sistema PU</option>
-                                <option  value="Case">CASE</option>
-                                <!-- Adicionar outras opções conforme necessário -->
-                            </select>
-                    </form>
+                    <div class="conteudo">
+                        <div class="filtro-busca">
+                            <form class="search-form" action="">
+                                <select id="segmento-atuacao">
+                                    <option value="">Selecionar...</option>
+                                    <option value="1">Aditivos</option>
+                                    <option value="2">Sistema PU</option>
+                                    <option value="3">CASE</option>
+                                </select>
+                            </form>
+                    
+                            <div id="produto">
+                    
+                                <div>
+                                    <input class="check" type="checkbox" value="catalizador"><label for="catalizador">Catalizador</label>
+                                </div>
+                                <div>
+                                    <input class="check" type="checkbox" value="silicone">
+                                    <label for="silicone">Silicone</label>
+                                </div>
+                                <div>
+                                    <input class="check" type="checkbox" value="pigmento">
+                                    <label for="pigmento">Pigmentos</label>
+                                </div>
+                                <div>
+                                    <input class="check" type="checkbox" value="Performance">
+                                    <label for="performance">Aditivos de Performance</label>
+                                </div>
+                                <hr />
+                            </div>
+                    
+                            <div id="filtro-propriedades">
+                    
+                                <div>
+                                    <input class="filtro" type="checkbox" value="Flexível Convencional">
+                                    <label for="catalizador">Flexivel Convencional - FF</label>
+                                </div>
+                                <div>
+                                    <input class="filtro" type="checkbox" value="Alta Resiliência">
+                                    <label for="silicone">Alta Resiliência - HR</label>
+                                </div>
+                                <div>
+                                    <input class="filtro" type="checkbox" value="Visco Elástico">
+                                    <label for="pigmento">Visco Elástico - VE</label>
+                                </div>
+                                <div>
+                                    <input class="filtro" type="checkbox" value="Integral Skin">
+                                    <label for="performance">Integral Skin - IS</label>
+                                </div>
+                                <div>
+                                    <input class="filtro" type="checkbox" value="Rigido">
+                                    <label for="performance">Rigido - RF</label>
+                                </div>
+                                <div>
+                                    <input class="filtro" type="checkbox" value="Semi Rígido">
+                                    <label for="performance">Semi Rígido - SR</label>
+                                </div>
+                                <div>
+                                    <input class="filtro" type="checkbox" value="Hiper Soft">
+                                    <label for="performance">Hiper Soft - HS</label>
+                                </div>
+                                <div>
+                                    <input class="filtro" type="checkbox" value="Microcelucar">
+                                    <label for="performance">Microcelucar - MC</label>
+                                </div>
+                                <hr />
+                                <div>
+                                    <input class="filtro" type="checkbox" value="Bloco">
+                                    <label for="catalizador">Bloco</label>
+                                </div>
+                                <div>
+                                    <input class="filtro" type="checkbox" value="Moldado">
+                                    <label for="silicone">Moldado</label>
+                                </div>
+                                <hr />
+                                <div>
+                                    <input class="filtro" type="checkbox" value="Gelificação">
+                                    <label for="silicone">Gelificação</label>
+                                </div>
+                                <div>
+                                    <input class="filtro" type="checkbox" value="Expansão">
+                                    <label for="silicone">Expansão</label>
+                                </div>
+                                <div>
+                                    <input class="filtro" type="checkbox" value="Balanceado">
+                                    <label for="silicone">Balanceado</label>
+                                </div>
+                                <div>
+                                    <input class="filtro" type="checkbox" value="Bloqueado">
+                                    <label for="silicone">Bloqueado</label>
+                                </div>
+                                <div>
+                                    <input class="filtro" type="checkbox" value="Trimerização">
+                                    <label for="silicone">Trimerização</label>
+                                </div>
+                            </div>
+                    
+                        </div>
+                    
+                        <div class="conteudo-busca">
+                            <table class="dados-cat">
+                                <thead>
+                                    <th>Nome</th>
+                                    <th>Catalizador</th>
+                                    <th>Tipo</th>
+                                    <th>Aplicação</th>
+                                </thead>
+                    
+                                <tbody id="tabela-dados">
+                    
+                                </tbody>
+                    
+                            </table>
+                        </div>
+                    </div>
 
-                    <!--  Formulário de Aditivos  -->
-                    <form id="prop-form" action="busca-reultado.html" class="search-form">
-                        <div>
-                            <label for="ffo-yield">Teor de Agua</label>
-                            <input id="input-busca" type="text" id="ffo-yield-min" placeholder="min">
-                            <input id="input-busca" type="text" id="ffo-yield-max" placeholder="max">
-                        </div>
-                        <div>
-                            <label for="dividend-yield">Pureza</label>
-                            <input id="input-busca" type="text" id="dividend-yield-min" placeholder="min">
-                            <input id="input-busca" type="text" id="dividend-yield-max" placeholder="max">
-                        </div>
-                        <div>
-                            <label for="p-vp">Densidade</label>
-                            <input id="input-busca" type="text" id="p-vp-min" placeholder="min">
-                            <input id="input-busca" type="text" id="p-vp-max" placeholder="max">
-                        </div>
-                        <div>
-                            <label for="valor-mercado">Viscosidade</label>
-                            <input id="input-busca" type="text" id="valor-mercado-min" placeholder="min">
-                            <input id="input-busca" type="text" id="valor-mercado-max" placeholder="max">
-                        </div>
-                        <div>
-                            <label for="qtd-imoveis">Peso Especifico</label>
-                            <input id="input-busca" type="text" id="qtd-imoveis-min" placeholder="min">
-                            <input id="input-busca" type="text" id="qtd-imoveis-max" placeholder="max">
-                        </div>
-                        <div>
-                            <label for="preco-m2">Teor de Estanho</label>
-                            <input id="input-busca" type="text" id="preco-m2-min" placeholder="min">
-                            <input id="input-busca" type="text" id="preco-m2-max" placeholder="max">
-                        </div>
-                        <div>
-                            <label for="aluguel-m2">Estanho S++</label>
-                            <input id="input-busca" type="text" id="aluguel-m2-min" placeholder="min">
-                            <input id="input-busca" type="text" id="aluguel-m2-max" placeholder="max">
-                        </div>
-                        <div>
-                            <label for="cap-rate">Teor de Hodroxila</label>
-                            <input id="input-busca" type="text" id="cap-rate-min" placeholder="min">
-                            <input id="input-busca" type="text" id="cap-rate-max" placeholder="max">
-                        </div>
-                        <div>
-                            <label for="vacancia">Acidez</label>
-                            <input id="input-busca" type="text" id="vacancia-min" placeholder="min">
-                            <input id="input-busca" type="text" id="vacancia-max" placeholder="max">
-                        </div>
-                        <div>
-                            <label for="vacancia">Fineza</label>
-                            <input id="input-busca" type="text" id="vacancia-min" placeholder="min">
-                            <input id="input-busca" type="text" id="vacancia-max" placeholder="max">
-                        </div>
-                        <div>
-                            <label for="vacancia">Tonalidade</label>
-                            <input id="input-busca" type="text" id="vacancia-min" placeholder="min">
-                            <input id="input-busca" type="text" id="vacancia-max" placeholder="max">
-                        </div>
-                        <div>
-                            <label for="vacancia">Matéria Seca</label>
-                            <input id="input-busca" type="text" id="vacancia-min" placeholder="min">
-                            <input id="input-busca" type="text" id="vacancia-max" placeholder="max">
-                        </div>
-                        <div>
-                            <label for="vacancia">Teor de Sólidos</label>
-                            <input id="input-busca" type="text" id="vacancia-min" placeholder="min">
-                            <input id="input-busca" type="text" id="vacancia-max" placeholder="max">
-                        </div>
-                        <div>
-                            <label for="vacancia">PH</label>
-                            <input id="input-busca" type="text" id="vacancia-min" placeholder="min">
-                            <input id="input-busca" type="text" id="vacancia-max" placeholder="max">
-                        </div>
-                        <div>
-                            <label for="vacancia">Tempo de pele</label>
-                            <input id="input-busca" type="text" id="vacancia-min" placeholder="min">
-                            <input id="input-busca" type="text" id="vacancia-max" placeholder="max">
-                        </div>
-                        <div>
-                            <label for="vacancia">Dureza</label>
-                            <input id="input-busca" type="text" id="vacancia-min" placeholder="min">
-                            <input id="input-busca" type="text" id="vacancia-max" placeholder="max">
-                        </div>
-                        <div class="button-container full-width">
-                            <button type="submit">Buscar</button>
-                        </div>
-                    </form>
-
-                    <!-- Formulário Sistema PU -->
-
-                    <form id="prop-form-pu" action="busca-reultado.html" class="search-form">
-                        <div>
-                            <label for="ffo-yield">Densidade</label>
-                            <input id="input-busca" type="text" id="ffo-yield-min" placeholder="min">
-                            <input id="input-busca" type="text" id="ffo-yield-max" placeholder="max">
-                        </div>
-                        <div>
-                            <label for="dividend-yield">Tempo de Crescimento</label>
-                            <input id="input-busca" type="text" id="dividend-yield-min" placeholder="min">
-                            <input id="input-busca" type="text" id="dividend-yield-max" placeholder="max">
-                        </div>
-                        <div>
-                            <label for="dividend-yield">Tempo Desmoldagem</label>
-                            <input id="input-busca" type="text" id="dividend-yield-min" placeholder="min">
-                            <input id="input-busca" type="text" id="dividend-yield-max" placeholder="max">
-                        </div>
-                        <div>
-                            <label for="p-vp">Tempo de Creme</label>
-                            <input id="input-busca" type="text" id="p-vp-min" placeholder="min">
-                            <input id="input-busca" type="text" id="p-vp-max" placeholder="max">
-                        </div>
-                        <div>
-                            <label for="valor-mercado">Tempo de Gel</label>
-                            <input id="input-busca" type="text" id="valor-mercado-min" placeholder="min">
-                            <input id="input-busca" type="text" id="valor-mercado-max" placeholder="max">
-                        </div>
-                        <div>
-                            <label for="qtd-imoveis">Tempo de Pega-livre</label>
-                            <input id="input-busca" type="text" id="qtd-imoveis-min" placeholder="min">
-                            <input id="input-busca" type="text" id="qtd-imoveis-max" placeholder="max">
-                        </div>
-                        <div>
-                            <label for="preco-m2">Dureza Shore A</label>
-                            <input id="input-busca" type="text" id="preco-m2-min" placeholder="min">
-                            <input id="input-busca" type="text" id="preco-m2-max" placeholder="max">
-                        </div>
-                        <div>
-                            <label for="aluguel-m2">Teor de NCO</label>
-                            <input id="input-busca" type="text" id="aluguel-m2-min" placeholder="min">
-                            <input id="input-busca" type="text" id="aluguel-m2-max" placeholder="max">
-                        </div>
-                        <div>
-                            <label for="cap-rate">Viscosidade</label>
-                            <input id="input-busca" type="text" id="cap-rate-min" placeholder="min">
-                            <input id="input-busca" type="text" id="cap-rate-max" placeholder="max">
-                        </div>
-                        <div>
-                            <label for="vacancia">Densidade-livre</label>
-                            <input id="input-busca" type="text" id="vacancia-min" placeholder="min">
-                            <input id="input-busca" type="text" id="vacancia-max" placeholder="max">
-                        </div>
-                        <div>
-                            <label for="vacancia">Dureza</label>
-                            <input id="input-busca" type="text" id="vacancia-min" placeholder="min">
-                            <input id="input-busca" type="text" id="vacancia-max" placeholder="max">
-                        </div>
-                        <div class="button-container full-width">
-                            <button type="submit">Buscar</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
                 <!-- Rodapé da Página -->
                 <div class="home-footer">
                     <p> Aplicativo Conceito</p>
@@ -217,26 +253,139 @@
                     <p>Desenvolvido por Lucas de Barros - Assistente Administrativo Operacional</p>
                 </div>
         </div>
-            <script>
-                var btn = document.getElementById("segmento-atuacao");
-                var formulário = document.getElementById("prop-form");
-                var formulário_PU = document.getElementById("prop-form-pu");
+        <script>
 
-                btn.addEventListener("change", function() { //change - evendo de mudança de item do select
-                    var valor = btn.value;
+            var btn = document.getElementById("segmento-atuacao");
+                    var teste = document.getElementById("produto");
+                    var produto = document.getElementById("filtro-propriedades");
+                    var checkboxes = document.querySelectorAll(".check");
 
-                    if (valor == "Aditivo") {
-                        formulário.style.display = "block";
-                    } else {
-                        formulário.style.display = "none";
-                    }
+                    btn.addEventListener("change", function() {
+                        var valor = btn.value;
 
-                    if (valor == "Sistema") {
-                        formulário_PU.style.display = "block";
-                    } else {
-                        formulário_PU.style.display = "none";
+                        if (valor == "1") {
+                            teste.style.display = "block";
+                        } 
+                        if (valor == "2") {
+                            alert("Teste 2");
+                        }
+                    });
+
+            // Funcão para selecionar Segmento
+            checkboxes.forEach(function(checkbox) {
+                checkbox.addEventListener("change", function() {
+                    if (checkbox.checked) {
+
+                            console.log(`Checkbox selecionado: ${checkbox.value}`);
+                            if(checkbox.value === 'catalizador'){
+                                produto.style.display = "block";
+
+                            }if(checkbox.value === 'silicone'){
+                                produto.style.display = "none";
+                                alert("Silicone");
+                            }
+
+                    
                     }
                 });
-            </script>
+            });
+/*------------------ Functions Pagina de busca ------------------*/
+                // Const com os dados da tabela
+                const dados = [
+                        {
+                        nome: "AMICAT CRH 3001",
+                        catalizador: "Expansão",
+                        tipos: ["Bloco", "Moldado"],  // Alterado para um array de tipos
+                        aplicacao: ["Flexível Convencional", "Alta Resiliência", "Visco Elástico"]
+                    },
+                    {
+                        nome: "AMICAT CMR 3077",
+                        catalizador: "Expansão",
+                        tipos: ["N/A"],
+                        aplicacao: ["Integral Skin", "Alta Resiliência", "Semi Rígido", "Microcelucar"]
+                    },
+                    {
+                        nome: "AMICAT CMR 3300",
+                        catalizador: "Gelificação",
+                        tipos: ["Bloco", "Moldado"],
+                        aplicacao: ["Flexível Convencional", "Alta Resiliência", "Visco Elástico","Integral Skin", "Rigido", "Semi Rígido", "Hiper Soft", "Microcelucar"]
+                    },
+                    {
+                        nome: "AMICAT CMR 3750",
+                        catalizador: "Balanceado",
+                        tipos: ["Bloco", "Moldado"],
+                        aplicacao: ["Flexível Convencional", "Alta Resiliência"]
+                    },
+                    {
+                        nome: "AMICAT CFF 3200",
+                        catalizador: "Balanceado",
+                        tipos: ["Bloco"],
+                        aplicacao: ["Flexível Convencional", "Alta Resiliência"]
+                    },
+                    {
+                        nome: "AMICAT CMR 3113",
+                        catalizador: "Balanceado",
+                        tipos: ["Bloco"],
+                        aplicacao: ["Flexível Convencional", "Alta Resiliência"]
+                    },
+                    {
+                        nome: "AMICAT CMR 3040",
+                        catalizador: "Balanceado",
+                        tipos: ["Moldado"],
+                        aplicacao: ["Alta Resiliência", "Semi Rígido"]
+                    },
+                    ]
+                    function carregarDados(filtrados = dados){  //gera os dados na tabela
+                        const tabelaDados = document.getElementById("tabela-dados");
+                        tabelaDados.innerHTML = ""; //Apaga dados da tabela
+
+                        if (filtrados.length === 0) {
+                            tabelaDados.innerHTML = `<tr><td colspan="4" class="no-data">Nenhum dado encontrado</td></tr>`;
+                            return;
+                        }
+
+                        filtrados.forEach((item) => {
+                            const row = document.createElement("tr");
+
+                            row.innerHTML = `
+                                <td>${item.nome}</td>
+                                <td>${item.catalizador}</td>
+                                <td>${item.tipos}</td>
+                                <td>${item.aplicacao}</td>
+                            `;
+
+                            tabelaDados.appendChild(row);
+                        });
+                    }
+
+                // Função para filtrar os dados com base nos checkboxes selecionados
+                function filtrarDados() {
+                    const filtrosSelecionados = Array.from(document.querySelectorAll(".filtro:checked"))
+                        .map((checkbox) => checkbox.value);
+
+                    const dadosFiltrados = dados.filter((item) =>
+                            filtrosSelecionados.some(filtro =>
+                            item.catalizador === filtro ||
+                            item.tipos.includes(filtro) ||  // Verifica se o tipo está no array de tipos
+                            item.aplicacao.includes(filtro) // Verifica se a aplicação está no array de aplicações
+                        )
+                    );
+
+                    const semDuplicatas = Array.from(
+                        new Map(dadosFiltrados.map(item => [item.nome, item])).values()
+                    );
+
+                    carregarDados(dadosFiltrados);
+                }
+
+                        // Adiciona evento nos checkboxes para filtrar ao selecionar
+                        document.querySelectorAll(".filtro").forEach((checkbox) => {
+                    checkbox.addEventListener("change", filtrarDados);
+                });
+
+                // Carrega todos os dados ao iniciar a página
+                window.onload = carregarDados;
+
+         </script>
 </body>
 </html>
