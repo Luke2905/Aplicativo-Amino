@@ -17,6 +17,7 @@
         }
         .container {
             min-height: 600px;
+            max-height: 650px;
             max-width: 100%;
             margin: 5px;
             background-color: white;
@@ -236,6 +237,7 @@
                                     <th>Catalizador</th>
                                     <th>Tipo</th>
                                     <th>Aplicação</th>
+                                    <th>Descrição</th>
                                 </thead>
                     
                                 <tbody id="tabela-dados">
@@ -296,7 +298,8 @@
                         nome: "AMICAT CRH 3001",
                         catalizador: "Expansão",
                         tipos: ["Bloco", "Moldado"],  // Alterado para um array de tipos
-                        aplicacao: ["Flexível Convencional", "Alta Resiliência", "Visco Elástico"]
+                        aplicacao: ["Flexível Convencional", "Alta Resiliência", "Visco Elástico"],
+                        descricao: "Catalisador de expansão, indicado para melhorar a pele em peças injetadas."
                     },
                     {
                         nome: "AMICAT CMR 3077",
@@ -358,6 +361,7 @@
                                 <td>${item.catalizador}</td>
                                 <td>${item.tipos}</td>
                                 <td>${item.aplicacao}</td>
+                                <td>${item.descricao}</td>
                             `;
 
                             tabelaDados.appendChild(row);
