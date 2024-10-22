@@ -192,8 +192,8 @@
                                     <label for="performance">Hiper Soft - HS</label>
                                 </div>
                                 <div>
-                                    <input class="filtro" type="checkbox" value="Microcelucar">
-                                    <label for="performance">Microcelucar - MC</label>
+                                    <input class="filtro" type="checkbox" value="Microcelular">
+                                    <label for="performance">Microcelular - MC</label>
                                 </div>
                                 <hr />
                                 <div>
@@ -302,13 +302,13 @@
                         nome: "AMICAT CMR 3077",
                         catalizador: "Expansão",
                         tipos: ["N/A"],
-                        aplicacao: ["Integral Skin", "Alta Resiliência", "Semi Rígido", "Microcelucar"]
+                        aplicacao: ["Integral Skin", "Alta Resiliência", "Semi Rígido", "Microcelular"]
                     },
                     {
                         nome: "AMICAT CMR 3300",
                         catalizador: "Gelificação",
                         tipos: ["Bloco", "Moldado"],
-                        aplicacao: ["Flexível Convencional", "Alta Resiliência", "Visco Elástico","Integral Skin", "Rigido", "Semi Rígido", "Hiper Soft", "Microcelucar"]
+                        aplicacao: ["Flexível Convencional", "Alta Resiliência", "Visco Elástico","Integral Skin", "Rigido", "Semi Rígido", "Hiper Soft", "Microcelular"]
                     },
                     {
                         nome: "AMICAT CMR 3750",
@@ -333,6 +333,12 @@
                         catalizador: "Balanceado",
                         tipos: ["Moldado"],
                         aplicacao: ["Alta Resiliência", "Semi Rígido"]
+                    },
+                    {
+                        nome: "AMICA BC 3310",
+                        catalizador: ["Gelificação", "Bloqueado"],
+                        tipos: ["Moldado"],
+                        aplicacao: ["Flexível Convencional", "Alta Resiliência", "Visco Elástico", "Microcelular"]
                     },
                     ]
                     function carregarDados(filtrados = dados){  //gera os dados na tabela
@@ -367,7 +373,8 @@
                             filtrosSelecionados.some(filtro =>
                             item.catalizador === filtro ||
                             item.tipos.includes(filtro) ||  // Verifica se o tipo está no array de tipos
-                            item.aplicacao.includes(filtro) // Verifica se a aplicação está no array de aplicações
+                            item.aplicacao.includes(filtro)||  // Verifica se o tipo está no array de tipos
+                            item.catalizador.includes(filtro)
                         )
                     );
 
