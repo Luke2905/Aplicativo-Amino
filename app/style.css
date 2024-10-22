@@ -260,6 +260,7 @@ h1{
 
   }
   .home-body {
+	min-height: 600px;
     text-align: center;
     display: grid;
     grid-gap: 20px; /* Maior espaço entre os blocos */
@@ -547,15 +548,12 @@ h1{
 .container {
 	min-height: 600px;
 	max-width: 90%;
-	margin: 0 auto;
-	padding: 20px;
 	background-color: white;
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 	border-radius: 10px;
 }
 .search-form {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
 	gap: 15px;
 }
 .search-form label {
@@ -600,6 +598,10 @@ h1{
 	height: 50px;
 }
 #prop-form{
+	display: none;
+	transition: 0.5s;
+}
+#form-aplic{
 	display: none;
 	transition: 0.5s;
 }
@@ -661,3 +663,92 @@ h1{
 	}
 	
 } */
+
+/*--------------------- Nova Pagina de Busca ------------------------------*/
+.conteudo{
+	display: grid;
+	grid-gap: 20px; /* Maior espaço entre os blocos */
+	grid-template-columns: 2fr 1fr; /* Proporção melhorada para as colunas */
+	grid-template-rows: auto; /* Ajusta a altura automaticamente */
+	grid-template-columns: auto;
+}
+.filtro-busca{
+	grid-column: 1;
+	grid-row: 1;
+	height: 500px;
+	max-width: 300px;
+	min-width: 300px;
+	overflow-y: auto;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+	background-color: #f0f0f0;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 10px;
+}
+
+th, td {
+	padding: 12px;
+	text-align: left;
+	border-bottom: 1px solid #ddd;
+}
+tbody{
+	overflow-y: auto;
+}
+th {
+	background-color: #003366;
+	color: white;
+}
+
+tr:hover {
+	background-color: #f1f1f1;
+}
+
+.no-data {
+	text-align: center;
+	padding: 20px;
+	color: #666;
+}
+.conteudo-busca{
+	grid-column: 2/ span 3;
+	grid-row: 1;
+}
+#produto {
+	display: none;
+	transition: 0.5s;
+	height: 100px;
+}  
+#filtro-propriedades {
+	display: none;
+	transition: 0.5s;
+}              
+
+#segmento-atuacao option {
+	background-color: aliceblue;
+	color: black;
+	margin: 10px;
+	font-size: 15px;
+}
+.mps {
+	width: 100%;
+	border: solid;
+}
+#body {
+	border: solid;
+}
+#tabela-row {
+	border: 1px;
+}
+label, input{
+	margin: 5px;
+}
