@@ -27,7 +27,7 @@
     bottom: 20px;
     right: 20px;
     font-size: 32px; /* Ajuste para que o ícone fique maior no mobile */
-    cursor: pointer;
+
     z-index: 1000; /* Para garantir que o ícone não fique atrás de outros elementos */
     transition: transform 0.3s; /* Animação suave ao interagir */
 }
@@ -711,7 +711,10 @@ th {
 }
 
 tr:hover {
+	
 	background-color: #f1f1f1;
+	cursor: pointer;
+	transition: 0.5s;
 }
 
 .no-data {
@@ -719,9 +722,11 @@ tr:hover {
 	padding: 20px;
 	color: #666;
 }
-.conteudo-busca{
-	grid-column: 2/ span 3;
-	grid-row: 1;
+.conteudo-busca {
+    grid-column: 2 / span 3;
+    grid-row: 1;
+    max-height: 500px;
+    overflow-y: auto;
 }
 #produto {
 	display: none;
