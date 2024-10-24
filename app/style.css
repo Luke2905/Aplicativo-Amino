@@ -651,6 +651,7 @@ h1{
 }
 .mensagem.resposta{
     margin-right: 70%;
+	margin: 10px 0;
     width: 200px;
     background-color: #b6afaf;
     border-radius: 10px 10px 10px 0px;
@@ -701,6 +702,16 @@ th, td {
 	padding: 12px;
 	text-align: left;
 	border-bottom: 1px solid #ddd;
+	width: 200px;
+	max-width: 250px;
+}
+
+#tabela-dados td{
+	padding: 12px;
+	text-align: left;
+	border-bottom: 1px solid #ddd;
+	width: 200px;
+	max-width: 250px;
 }
 tbody{
 	overflow-y: auto;
@@ -736,7 +747,21 @@ tr:hover {
 #filtro-propriedades {
 	display: none;
 	transition: 0.5s;
-}              
+}   
+
+#tabela-cat {
+	display: none;
+	transition: 0.5s;
+}
+
+#tabela-silicone{
+	display: none;
+}
+
+#filtro-propriedades-silicone {
+	display: none;
+	transition: 0.5s;
+}  
 
 #segmento-atuacao option {
 	background-color: aliceblue;
