@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="style-responsive.css" media="screen" />
     <!-- Java Script Externo -->
-    <script src="javascript/script.js"></script>
+    <script src="javascript/script.js" defer></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -227,10 +227,76 @@
                                     <label for="silicone">Trimerização</label>
                                 </div>
                             </div>
+
+                            <div id="filtro-propriedades-silicone">
+
+                                <h4>Aplicação</h4>
                     
+                                <div>
+                                    <input class="filtro" type="checkbox" value="Convencional Flexível">
+                                    <label for="silicone">Convencional Flexivel</label>
+                                </div>         
+                                <div>
+                                    <input class="filtro" type="checkbox" value="Flexivel Convencional Viscoelástico">
+                                    <label for="silicone">Flexivel Convencional Viscoelástico</label>
+                                </div>  
+                                <div>
+                                    <input class="filtro" type="checkbox" value="Hiper Soft">
+                                    <label for="silicone">Hiper Soft</label>
+                                </div>    
+                                
+                                <hr>
+                                <h4>Surfactação</h4>
+
+                                <div>
+                                    <input class="filtro" type="checkbox" value="A">
+                                    <label for="silicone">Alta - A</label>
+                                </div>         
+                                <div>
+                                    <input class="filtro" type="checkbox" value="M">
+                                    <label for="silicone">Média - M</label>
+                                </div>  
+                                <div>
+                                    <input class="filtro" type="checkbox" value="B">
+                                    <label for="silicone">Baixa - B</label>
+                                </div> 
+
+                                <hr>
+                                <h4>Densidade</h4>
+
+                                <div>
+                                    <input class="filtro" type="checkbox" value="Alta">
+                                    <label for="silicone">Alta</label>
+                                </div>         
+                                <div>
+                                    <input class="filtro" type="checkbox" value="Média">
+                                    <label for="silicone">Média</label>
+                                </div>  
+                                <div>
+                                    <input class="filtro" type="checkbox" value="Baixa">
+                                    <label for="silicone">Baixa</label>
+                                </div> 
+
+                                <hr>
+                                <h4>Estabilização</h4>
+
+                                <div>
+                                    <input class="filtro" type="checkbox" value="Excelente">
+                                    <label for="silicone">★★★★★ - Excelente</label>
+                                </div>         
+                                <div>
+                                    <input class="filtro" type="checkbox" value="Bom">
+                                    <label for="silicone">★★★★ - Bom</label>
+                                </div>  
+                                <div>
+                                    <input class="filtro" type="checkbox" value="Média">
+                                    <label for="silicone">★★★ - Médio</label>
+                                </div> 
+                            </div>
                         </div>
+
                     
-                        <div class="conteudo-busca">
+                        <div id="tabela-cat" class="conteudo-busca">
                             <table class="dados-cat">
                                 <thead>
                                     <th>Nome</th>
@@ -241,9 +307,23 @@
                                 </thead>
                     
                                 <tbody id="tabela-dados">
-                    
                                 </tbody>
+                            </table>
+                        </div>
+
+                        <div id="tabela-silicone" class="conteudo-busca">
+                            <table  class="dados-silicone">
+                                <thead>
+                                    <th>Nome</th>
+                                    <th>Surfactação</th>
+                                    <th>Densidade</th>
+                                    <th>Aplicação</th>
+                                    <th>Estabilização</th>
+                                    <th>Descrição</th>
+                                </thead>
                     
+                                <tbody id="tabela-dados-Silicone">
+                                </tbody>
                             </table>
                         </div>
                     </div>
@@ -255,11 +335,14 @@
                     <p>Desenvolvido por Lucas de Barros - Assistente Administrativo Operacional</p>
                 </div>
         </div>
-        <script>
+         <script>
 
             var btn = document.getElementById("segmento-atuacao");
                     var teste = document.getElementById("produto");
                     var produto = document.getElementById("filtro-propriedades");
+                    var tabelaCat = document.getElementById("tabela-cat");
+                    var produto2 = document.getElementById("filtro-propriedades-silicone");
+                    var tabelaSilicone = document.getElementById("tabela-silicone");
                     var checkboxes = document.querySelectorAll(".check");
 
                     btn.addEventListener("change", function() {
@@ -279,92 +362,137 @@
                     if (checkbox.checked) {
 
                             console.log(`Checkbox selecionado: ${checkbox.value}`);
-                            if(checkbox.value === 'catalizador'){
-                                produto.style.display = "block";
 
-                            }if(checkbox.value === 'silicone'){
-                                produto.style.display = "none";
-                                alert("Silicone");
+                            switch (checkbox.value){
+
+                                case 'catalizador': 
+                                    produto.style.display = "block";
+                                    tabelaCat.style.display = "block";
+                                    produto2.style.display = "none";
+                                    tabelaSilicone.style.display = "none";
+                                break;
+                                case 'silicone':
+                                    produto2.style.display = "block";
+                                    tabelaSilicone.style.display = "block";
+                                    produto.style.display = "none";
+                                    tabelaCat.style.display = "none";
+                                break;
                             }
-
-                    
                     }
                 });
-            });
+            }); 
 /*------------------ Functions Pagina de busca ------------------*/
-                // Const com os dados da tabela
-                const dados = [
+                // Const com os dados da tabela 
+              const dados = [
                         {
                         nome: "AMICAT CRH 3001",
-                        catalizador: "Expansão",
+                        prod: "Expansão",
                         tipos: ["Bloco", "Moldado"],  // Alterado para um array de tipos
                         aplicacao: ["Flexível Convencional", "Alta Resiliência", "Visco Elástico"],
-                        descricao: "Catalisador de expansão, indicado para melhorar a pele em peças injetadas."
+                        descricao: "Catalisador de expansão, indicado para melhorar a pele em peças injetadas.",
+
                     },
                     {
                         nome: "AMICAT CMR 3077",
-                        catalizador: "Expansão",
+                        prod: "Expansão",
                         tipos: ["N/A"],
                         aplicacao: ["Integral Skin", "Alta Resiliência", "Semi Rígido", "Microcelular"]
                     },
                     {
                         nome: "AMICAT CMR 3300",
-                        catalizador: "Gelificação",
+                        prod: "Gelificação",
                         tipos: ["Bloco", "Moldado"],
                         aplicacao: ["Flexível Convencional", "Alta Resiliência", "Visco Elástico","Integral Skin", "Rigido", "Semi Rígido", "Hiper Soft", "Microcelular"]
                     },
                     {
                         nome: "AMICAT CMR 3750",
-                        catalizador: "Balanceado",
+                        prod: "Balanceado",
                         tipos: ["Bloco", "Moldado"],
                         aplicacao: ["Flexível Convencional", "Alta Resiliência"]
                     },
                     {
                         nome: "AMICAT CFF 3200",
-                        catalizador: "Balanceado",
+                        prod: "Balanceado",
                         tipos: ["Bloco"],
                         aplicacao: ["Flexível Convencional", "Alta Resiliência"]
                     },
                     {
                         nome: "AMICAT CMR 3113",
-                        catalizador: "Balanceado",
+                        prod: "Balanceado",
                         tipos: ["Bloco"],
                         aplicacao: ["Flexível Convencional", "Alta Resiliência"]
                     },
                     {
                         nome: "AMICAT CMR 3040",
-                        catalizador: "Balanceado",
+                        prod: "Balanceado",
                         tipos: ["Moldado"],
                         aplicacao: ["Alta Resiliência", "Semi Rígido"]
                     },
                     {
                         nome: "AMICA BC 3310",
-                        catalizador: ["Gelificação", "Bloqueado"],
+                        prod: ["Gelificação", "Bloqueado"],
                         tipos: ["Moldado"],
                         aplicacao: ["Flexível Convencional", "Alta Resiliência", "Visco Elástico", "Microcelular"]
                     },
+                    {
+                        nome: "AMISIL AMS 4327",
+                        prod: ["A","M"],
+                        tipos: ["Baixa"],
+                        aplicacao: ["Convencional Flexível"]
+                    },
+                    {
+                        nome: "AMISIL SHS 4124",
+                        prod: ["A"],
+                        tipos: ["Alta"],
+                        aplicacao: ["Hiper Soft"]
+                    },
+                    {
+                        nome: "AMISIL AMS 4800",
+                        prod: ["B"],
+                        tipos: ["Alta"],
+                        aplicacao: ["Flexivel Convencional Viscoelástico"],
+                        estab: ["★★★"]
+                    },
                     ]
+
                     function carregarDados(filtrados = dados){  //gera os dados na tabela
                         const tabelaDados = document.getElementById("tabela-dados");
+                        const tabelaDadosSilicone = document.getElementById("tabela-dados-Silicone");
                         tabelaDados.innerHTML = ""; //Apaga dados da tabela
+                        tabelaDadosSilicone.innerHTML = "";
 
                         if (filtrados.length === 0) {
                             tabelaDados.innerHTML = `<tr><td colspan="4" class="no-data">Nenhum dado encontrado</td></tr>`;
+                            tabelaDadosSilicone.innerHTML = `<tr><td colspan="4" class="no-data">Nenhum dado encontrado</td></tr>`;
                             return;
                         }
 
                         filtrados.forEach((item) => {
-                            const row = document.createElement("tr");
+                            if (item.nome.includes("AMISIL")) {
+                                const row = document.createElement("tr");
 
-                            row.innerHTML = `
-                                <td>${item.nome}</td>
-                                <td>${item.catalizador}</td>
-                                <td>${item.tipos}</td>
-                                <td>${item.aplicacao}</td>
-                                <td>${item.descricao}</td>
-                            `;
+                                row.innerHTML = `
+                                    <td>${item.nome}</td>
+                                    <td>${item.prod}</td>
+                                    <td>${item.tipos}</td>
+                                    <td>${item.aplicacao}</td>
+                                    <td>${item.estab}</td>
+                                    <td>${item.descricao}</td>
+                                `;
+                               tabelaDadosSilicone.appendChild(row);
+                            } else {
 
-                            tabelaDados.appendChild(row);
+                                const row = document.createElement("tr");
+
+                                row.innerHTML = `
+                                    <td>${item.nome}</td>
+                                    <td>${item.prod}</td>
+                                    <td>${item.tipos}</td>
+                                    <td>${item.aplicacao}</td>
+                                    <td>${item.descricao}</td>
+                                `;
+                                tabelaDados.appendChild(row);
+                            }
                         });
                     }
 
@@ -375,10 +503,10 @@
 
                     const dadosFiltrados = dados.filter((item) =>
                             filtrosSelecionados.some(filtro =>
-                            item.catalizador === filtro ||
+                            item.prod === filtro ||
                             item.tipos.includes(filtro) ||  // Verifica se o tipo está no array de tipos
                             item.aplicacao.includes(filtro)||  // Verifica se o tipo está no array de tipos
-                            item.catalizador.includes(filtro)
+                            item.prod.includes(filtro)
                         )
                     );
 
@@ -391,12 +519,12 @@
 
                         // Adiciona evento nos checkboxes para filtrar ao selecionar
                         document.querySelectorAll(".filtro").forEach((checkbox) => {
-                    checkbox.addEventListener("change", filtrarDados);
+                        checkbox.addEventListener("change", filtrarDados);
                 });
 
                 // Carrega todos os dados ao iniciar a página
-                window.onload = carregarDados;
+                window.onload = carregarDados; 
 
-         </script>
+         </script> 
 </body>
 </html>
