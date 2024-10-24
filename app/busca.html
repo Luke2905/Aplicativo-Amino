@@ -230,6 +230,7 @@
 
                             <div id="filtro-propriedades-silicone">
 
+                               <br>
                                 <h4>Aplicação</h4>
                     
                                 <div>
@@ -289,7 +290,7 @@
                                     <label for="silicone">★★★★ - Bom</label>
                                 </div>  
                                 <div>
-                                    <input class="filtro" type="checkbox" value="Média">
+                                    <input class="filtro" type="checkbox" value="Médio">
                                     <label for="silicone">★★★ - Médio</label>
                                 </div> 
                             </div>
@@ -451,7 +452,7 @@
                         prod: ["B"],
                         tipos: ["Alta"],
                         aplicacao: ["Flexivel Convencional Viscoelástico"],
-                        estab: ["★★★"]
+                        estab: ["Médio","★★★"]
                     },
                     ]
 
@@ -462,8 +463,8 @@
                         tabelaDadosSilicone.innerHTML = "";
 
                         if (filtrados.length === 0) {
-                            tabelaDados.innerHTML = `<tr><td colspan="4" class="no-data">Nenhum dado encontrado</td></tr>`;
-                            tabelaDadosSilicone.innerHTML = `<tr><td colspan="4" class="no-data">Nenhum dado encontrado</td></tr>`;
+                            tabelaDados.innerHTML = `<tr><td colspan="5" class="no-data">Nenhum dado encontrado</td></tr>`;
+                            tabelaDadosSilicone.innerHTML = `<tr><td colspan="6" class="no-data">Nenhum dado encontrado</td></tr>`;
                             return;
                         }
 
@@ -481,7 +482,7 @@
                                 `;
                                tabelaDadosSilicone.appendChild(row);
                             } else {
-
+                                
                                 const row = document.createElement("tr");
 
                                 row.innerHTML = `
@@ -507,6 +508,7 @@
                             item.tipos.includes(filtro) ||  // Verifica se o tipo está no array de tipos
                             item.aplicacao.includes(filtro)||  // Verifica se o tipo está no array de tipos
                             item.prod.includes(filtro)
+                            
                         )
                     );
 
