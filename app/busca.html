@@ -294,7 +294,33 @@
                                     <label for="silicone">★★★ - Médio</label>
                                 </div> 
                             </div>
+
+                            <div id="filtro-propriedades-pigmento">
+
+                                <br>
+                                 <h4>Cor</h4>
+                     
+                                 <div>
+                                     <input class="filtro" type="checkbox" value="Vermelho">
+                                     <label for="silicone">vermelho</label>
+                                 </div>     
+                                 <div>
+                                    <input class="filtro" type="checkbox" value="Amarelo">
+                                    <label for="silicone">Amarelo</label>
+                                </div>     
+                                <div>
+                                    <input class="filtro" type="checkbox" value="Azul">
+                                    <label for="silicone">Azul</label>
+                                </div>   
+                                <div>
+                                    <input class="filtro" type="checkbox" value="Verde">
+                                    <label for="silicone">Verde</label>
+                                </div>   
+                            </div>
                         </div>
+
+
+                       
 
                     
                         <div id="tabela-cat" class="conteudo-busca">
@@ -327,8 +353,25 @@
                                 </tbody>
                             </table>
                         </div>
+
+                        <div id="tabela-pigmento" class="conteudo-busca">
+                            <table  class="dados-silicone">
+                                <thead>
+                                    <th>Nome</th>
+                                    <th>cor</th>
+                                    <th>Imagem</th>
+                                    <th>Viscosidade</th>
+                                    <th>Descrição</th>
+                                    <th>Links</th>
+                                </thead>
+                    
+                                <tbody id="tabela-dados-pigmento">
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
 
+                    
                 <!-- Rodapé da Página -->
                 <div class="home-footer">
                     <p> Aplicativo Conceito</p>
@@ -344,6 +387,8 @@
                     var tabelaCat = document.getElementById("tabela-cat");
                     var produto2 = document.getElementById("filtro-propriedades-silicone");
                     var tabelaSilicone = document.getElementById("tabela-silicone");
+                    var produto3 = document.getElementById("filtro-propriedades-pigmento");
+                    var tabelaPigmento = document.getElementById("tabela-pigmento");
                     var checkboxes = document.querySelectorAll(".check");
 
                     btn.addEventListener("change", function() {
@@ -371,13 +416,25 @@
                                     tabelaCat.style.display = "block";
                                     produto2.style.display = "none";
                                     tabelaSilicone.style.display = "none";
+                                    produto3.style.display = "none";
+                                    tabelaPigmento.style.display = "none";
                                 break;
                                 case 'silicone':
                                     produto2.style.display = "block";
                                     tabelaSilicone.style.display = "block";
                                     produto.style.display = "none";
                                     tabelaCat.style.display = "none";
+                                    produto3.style.display = "none";
+                                    tabelaPigmento.style.display = "none";
                                 break;
+                                case 'pigmento':
+                                    produto3.style.display = "block";
+                                    tabelaPigmento.style.display = "block";
+                                    produto.style.display = "none";
+                                    tabelaCat.style.display = "none";
+                                    produto2.style.display = "none";
+                                    tabelaSilicone.style.display = "none";
+                                break
                             }
                     }
                 });
@@ -452,19 +509,36 @@
                         prod: ["B"],
                         tipos: ["Alta"],
                         aplicacao: ["Flexivel Convencional Viscoelástico"],
-                        estab: ["Médio","★★★"]
+                        estab: ["★★★"],
+                        ranking: ["Médio"]
+                    },
+                    {
+                        nome: "AMICOLOR PFR",
+                        prod: ["Vermelho"],
+                        tipos: ["red"],
+                        aplicacao: ["Pasta"],
+                        link: "pag-construcao.html"
+                    },
+                    {
+                        nome: "AMICOLOR PFR",
+                        prod: ["Vermelho"],
+                        tipos: ["magenta"],
+                        aplicacao: ["Pasta"],
                     },
                     ]
 
                     function carregarDados(filtrados = dados){  //gera os dados na tabela
                         const tabelaDados = document.getElementById("tabela-dados");
                         const tabelaDadosSilicone = document.getElementById("tabela-dados-Silicone");
+                        const tabelaDadosPigmento = document.getElementById("tabela-dados-pigmento");
                         tabelaDados.innerHTML = ""; //Apaga dados da tabela
                         tabelaDadosSilicone.innerHTML = "";
+                        tabelaDadosPigmento.innerHTML = "";
 
                         if (filtrados.length === 0) {
                             tabelaDados.innerHTML = `<tr><td colspan="5" class="no-data">Nenhum dado encontrado</td></tr>`;
                             tabelaDadosSilicone.innerHTML = `<tr><td colspan="6" class="no-data">Nenhum dado encontrado</td></tr>`;
+                            tabelaDadosPigmento.innerHTML = `<tr><td colspan="6" class="no-data">Nenhum dado encontrado</td></tr>`;
                             return;
                         }
 
@@ -481,7 +555,23 @@
                                     <td>${item.descricao}</td>
                                 `;
                                tabelaDadosSilicone.appendChild(row);
-                            } else {
+                            } if (item.nome.includes("AMICOLOR")) {
+
+                                const row = document.createElement("tr");
+
+                                row.innerHTML = `
+                                    
+                                    <td>${item.nome}</td>
+                                    <td>${item.prod}</td>
+                                    <td style=" background-color: ${item.tipos}; width: 200px"></td>
+                                    <td>${item.aplicacao}</td>
+                                    <td>${item.descricao}</td>
+                                    <td > <a  href="${item.link}"><img class="icon"src="https://cdn-icons-png.flaticon.com/512/1374/1374834.png" alt="">Documentação</a></td>
+                                `;
+                                tabelaDadosPigmento.appendChild(row);
+
+
+                            } if (item.nome.includes("AMICAT")){
                                 
                                 const row = document.createElement("tr");
 
