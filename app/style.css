@@ -763,6 +763,15 @@ tr:hover {
 	transition: 0.5s;
 }  
 
+#tabela-pigmento{
+	display: none;
+}
+
+#filtro-propriedades-pigmento {
+	display: none;
+	transition: 0.5s;
+} 
+
 #segmento-atuacao option {
 	background-color: aliceblue;
 	color: black;
