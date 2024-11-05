@@ -316,6 +316,19 @@
                                     <input class="filtro" type="checkbox" value="Verde">
                                     <label for="silicone">Verde</label>
                                 </div>   
+                                <br>
+                                <hr>
+
+                                <h4>Viscosidade</h4>
+
+                                <div>
+                                    <input class="filtro" type="checkbox" value="Pasta">
+                                    <label for="silicone">Pasta</label>
+                                </div>   
+                                <div>
+                                    <input class="filtro" type="checkbox" value="Liquido">
+                                    <label for="silicone">Liquido</label>
+                                </div> 
                             </div>
                         </div>
 
@@ -331,6 +344,7 @@
                                     <th>Tipo</th>
                                     <th>Aplicação</th>
                                     <th>Descrição</th>
+                                    <th>Links</th>
                                 </thead>
                     
                                 <tbody id="tabela-dados">
@@ -347,6 +361,7 @@
                                     <th>Aplicação</th>
                                     <th>Estabilização</th>
                                     <th>Descrição</th>
+                                    <th>Links</th>
                                 </thead>
                     
                                 <tbody id="tabela-dados-Silicone">
@@ -496,13 +511,25 @@
                         nome: "AMISIL AMS 4327",
                         prod: ["A","M"],
                         tipos: ["Baixa"],
-                        aplicacao: ["Convencional Flexível"]
+                        aplicacao: ["Convencional Flexível"],
+                        estab: ["★★★★★"],
+                        ranking: ["Excelente"]
                     },
                     {
                         nome: "AMISIL SHS 4124",
                         prod: ["A"],
                         tipos: ["Alta"],
-                        aplicacao: ["Hiper Soft"]
+                        aplicacao: ["Hiper Soft"],
+                        estab: ["★★★★★"],
+                        ranking: ["Excelente"]
+                    },
+                    {
+                        nome: "AMISIL AMS 4230",
+                        prod: ["A - M"],
+                        tipos: ["Baixa"],
+                        aplicacao: ["Convencional Flexível"],
+                        estab: ["★★★★"],
+                        ranking: ["Bom"]
                     },
                     {
                         nome: "AMISIL AMS 4800",
@@ -517,14 +544,26 @@
                         prod: ["Vermelho"],
                         tipos: ["red"],
                         aplicacao: ["Pasta"],
+                        descricao: "Pigmento vermelho orgânico disperso em poliol.",
                         link: "pag-construcao.html"
                     },
                     {
                         nome: "AMICOLOR PFR",
                         prod: ["Vermelho"],
-                        tipos: ["magenta"],
+                        tipos: ["#ff00a6"],
+                        descricao: "Pigmento vermelho orgânico disperso em poliol.",
                         aplicacao: ["Pasta"],
+                        link: "pag-construcao.html"
                     },
+                    {
+                        nome: "AMICOLOR PFY",
+                        prod: ["Amarelo"],
+                        tipos: ["yellow"],
+                        descricao: "Pigmento amarelo orgânico disperso em poliol.",
+                        aplicacao: ["Pasta", "Liquido"],
+                        link: "pag-construcao.html"
+                    },
+                    
                     ]
 
                     function carregarDados(filtrados = dados){  //gera os dados na tabela
@@ -545,7 +584,7 @@
                         filtrados.forEach((item) => {
                             if (item.nome.includes("AMISIL")) {
                                 const row = document.createElement("tr");
-
+                                
                                 row.innerHTML = `
                                     <td>${item.nome}</td>
                                     <td>${item.prod}</td>
@@ -553,6 +592,7 @@
                                     <td>${item.aplicacao}</td>
                                     <td>${item.estab}</td>
                                     <td>${item.descricao}</td>
+                                    <td > <a  href="${item.link}"><img class="icon"src="https://cdn-icons-png.flaticon.com/512/1374/1374834.png" alt="">Documentação</a></td>
                                 `;
                                tabelaDadosSilicone.appendChild(row);
                             } if (item.nome.includes("AMICOLOR")) {
@@ -581,6 +621,7 @@
                                     <td>${item.tipos}</td>
                                     <td>${item.aplicacao}</td>
                                     <td>${item.descricao}</td>
+                                    <td > <a  href="${item.link}"><img class="icon"src="https://cdn-icons-png.flaticon.com/512/1374/1374834.png" alt="">Documentação</a></td>
                                 `;
                                 tabelaDados.appendChild(row);
                             }
@@ -592,15 +633,14 @@
                     const filtrosSelecionados = Array.from(document.querySelectorAll(".filtro:checked"))
                         .map((checkbox) => checkbox.value);
 
-                    const dadosFiltrados = dados.filter((item) =>
-                            filtrosSelecionados.some(filtro =>
-                            item.prod === filtro ||
-                            item.tipos.includes(filtro) ||  // Verifica se o tipo está no array de tipos
-                            item.aplicacao.includes(filtro)||  // Verifica se o tipo está no array de tipos
-                            item.prod.includes(filtro)
-                            
-                        )
-                    );
+                                 const dadosFiltrados = dados.filter((item) =>
+                                filtrosSelecionados.some(filtro =>
+                                    (item.prod && item.prod.includes(filtro)) ||
+                                    (item.tipos && item.tipos.includes(filtro)) ||  // Verifica se tipos existe antes de usar includes
+                                    (item.aplicacao && item.aplicacao.includes(filtro)) ||  // Verifica se aplicação existe antes de usar includes
+                                    (item.ranking && item.ranking.includes(filtro))  // Verifica se ranking existe antes de usar includes
+                                )
+                            );
 
                     const semDuplicatas = Array.from(
                         new Map(dadosFiltrados.map(item => [item.nome, item])).values()
