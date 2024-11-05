@@ -72,7 +72,7 @@ function enviarMensagem(){
 
   // -> Simula a mensagen automatica
 
-  switch (mensagem){
+  switch (true){
 
       default:
             setTimeout(() => {
@@ -83,7 +83,7 @@ function enviarMensagem(){
         }, 2500); 
       break;
 
-      case 'oi': setTimeout(() => {
+      case /* Array -> */['oi', 'olá', 'ola'].some(palavra => mensagem.includes(palavra)): setTimeout(() => { //Array.some() ajuda o case a identificar mais de uma possibilidade
             exibeMensagem('Olá, eu sou o assistente de troubleshooting da AMINO. Como posso ajudar?', 'resposta'); 
           }, 1000); 
       break;
@@ -93,8 +93,7 @@ function enviarMensagem(){
           }, 1000); 
       break;
 
-      case 'home':
-      case 'voltar home': setTimeout(() => {
+      case ['home'].some(palavra => mensagem.includes(palavra)): setTimeout(() => {
             exibeMensagem('Certo, redirecionando para Home', 'resposta'); 
           }, 1000); 
             setTimeout(
@@ -103,7 +102,7 @@ function enviarMensagem(){
           }, 3000);
       break;
 
-      case 'busca': setTimeout(() => {
+      case ['busca', 'procurar', 'buscar'].some(palavra => mensagem.includes(palavra)): setTimeout(() => {
             exibeMensagem('Certo, redirecionando para Busca Avançancada por Propriedades', 'resposta'); 
           }, 1000); 
             setTimeout(
@@ -112,7 +111,13 @@ function enviarMensagem(){
           }, 3000);
       break;
 
-      case 'help': setTimeout(() => {
+      case ['indique', 'traga', 'busque', 'pesquise'].some(palavra => mensagem.includes(palavra)): setTimeout(() => {
+        exibeMensagem('Desculpe, não sou capaz de efetuar bucas ;(', 'resposta'); 
+        exibeMensagem('Va para a <a style=" color: #0cbdf7;" href="busca.html">Pagina de Busca</a> para poder buscar por mais detalhes dos nossos produtos', 'resposta'); 
+      }, 1000); 
+  break;
+
+      case ['help', 'ajuda'].some(palavra => mensagem.includes(palavra)): setTimeout(() => {
             exibeMensagem('Certo, ire lhe mostrar uma lista com os principais comandos de ação ', 'resposta');
           }, 1000); ;
           setTimeout(() => {
