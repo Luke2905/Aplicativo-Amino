@@ -700,7 +700,7 @@ table {
 
 th, td {
 	padding: 12px;
-	text-align: left;
+	text-align: center;
 	border-bottom: 1px solid #ddd;
 	width: 200px;
 	max-width: 250px;
@@ -790,4 +790,57 @@ tr:hover {
 }
 label, input{
 	margin: 5px;
+}
+/*------------------- Matéria Prima --------------------*/
+.mp-body {
+	min-height: 600px;
+    text-align: center;
+    display: grid;
+    grid-gap: 20px; /* Maior espaço entre os blocos */
+    grid-template-columns: 1fr 1fr; /* Proporção melhorada para as colunas */
+    grid-template-rows: auto; /* Ajusta a altura automaticamente */
+    margin: 0px; /* Maior margem para espaçamento */
+    width: 100%;
+    height: auto; /* Deixa a altura automática, ajustando conforme o conteúdo */
+    border-radius: 10px 10px 0 0;
+    background-color: #ffffff;
+    padding: 20px; /* Espaçamento interno para os itens */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra leve para dar profundidade */
+}
+.table-mp{
+
+    grid-column: 1; 
+    grid-row: 1/ 3; 
+    padding: 0 20px; 
+    background-color: #f8f8f8; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+	max-height: 650px;
+	overflow-y: auto;
+}
+.table-mp table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.table-mp thead {
+	position: sticky; /* Faz o cabeçalho fixo */
+	top: 0;
+	background-color: #f9f9f9; /* Fundo para diferenciar */
+	z-index: 1; /* Garante que o cabeçalho fique acima */
+}
+
+.table-mp th, .table-mp td {
+	padding: 10px;
+	border: 1px solid #ddd;
+	text-align: center;
+}
+.dash-mp{
+	border: 1px solid black;
+    border-radius: 10px;
+    grid-column: 2; 
+    grid-row: 1 / 3; 
+    padding: 20px; 
+    background-color: #f8f8f8; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+	float: left;
 }
