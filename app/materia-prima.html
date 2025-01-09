@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="style-responsive.css" media="screen" />
     <script src="javascript/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <link rel="icon" type="image/png" href="https://www.amino.com.br/wp-content/themes/amino/assets/img/amino-dark-logo.svg"/>
     <style>
         body {
@@ -16,6 +17,20 @@
         .container {
             max-width: 1200px;
             margin: auto;
+        }
+        #chart {
+            display: none;
+        }
+        .search-form{
+            max-width: 50%;
+            display: flex;
+            margin-left: 25%;
+        }
+        #selectAno{
+            float: right;
+        }
+        #selectMes{
+            float: left;
         }
     </style>
 </head>
@@ -49,7 +64,8 @@
         </div>
         <div class="mp-body">
             <div class="table-mp">
-                <table>
+                <input type="text" id="barraPesquisa" onkeyup="" placeholder="Pesquisa.">
+                <table id="tabela-mp">
                     <thead>
                         <th></th>
                         <th>Código</th>
@@ -59,7 +75,25 @@
                     <tbody id="table-body"></tbody>
                 </table>
             </div>
-            <div class="dash-mp"></div>
+            <div id="dash-mp">
+                <div id="chart">
+                    <canvas id="chartMP"></canvas>
+                </div>
+                <form class="search-form" action="">
+                    <select id="selectAno">
+                        <option value="">Selecionar...</option>
+                        <option value="1">2023</option>
+                        <option value="2">2024</option>
+                        <option value="3">2025</option>
+                    </select>
+                    <select id="selectMes">
+                        <option value="">Selecionar...</option>
+                        <option value="1">2023</option>
+                        <option value="2">2024</option>
+                        <option value="3">2025</option>
+                    </select>
+                </form>
+            </div>
         </div>
         <div class="home-footer">
             <p>Aplicativo Conceito</p>
@@ -88,7 +122,7 @@
                 return;
             }
 
-            tableBody.innerHTML = ''; // Limpa o conteúdo anterior
+            tableBody.innerHTML = ''; 
 
             window.dados.forEach((item) => {
                 const row = document.createElement("tr");
@@ -101,13 +135,13 @@
                 tableBody.appendChild(row);
             });
 
-            // Adiciona os event listeners após criar as linhas
             adicionarEventListeners();
         }
 
         // Função para adicionar event listeners às checkboxes
         function adicionarEventListeners() {
             const checkboxes = document.querySelectorAll(".row-checkbox");
+            var myChart = document.getElementById("chart")
 
             checkboxes.forEach((checkbox) => {
                 checkbox.addEventListener("change", function () {
@@ -117,10 +151,57 @@
                             .slice(1) // Ignorar a primeira célula (checkbox)
                             .map(cell => cell.textContent.trim());
                         console.log("Informações da linha selecionada:", data);
+                        myChart.style.display = "block";
                     }
                 });
             });
         }
+
+        /*---------------------- Gráficos Matérias Primas --------------------------------*/
+
+        const Mes = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]
+
+        const xMes = Mes; // Valores X e Y do Gráfico
+        const yCusto = [ 15.5, 16, 20, 17.8, 17.8];
+
+        // Geração do gráfico 
+        new Chart("chartMP", { 
+            
+            type: "line", // -> Tipo de Grafico
+            data: {
+                labels: xMes, // -> Rótulos/Valores do eixo X
+                datasets: [{
+                    fill: false,
+                    lineTension: 0,
+                    backgroundColor:"rgba(0,0,255,1.0)",
+                    borderColor: "rgba(0,0,255,0.1)",
+                    data: yCusto // Valores eixo Y
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: "Histórico de Custo 2024"
+                },
+                legend: {display: false}
+            }
+        });
+
+
+    /*------------------------------------------ X ---------------------------------------*/
+   
+
+    checkboxes.forEach(function(checkbox) {
+                checkbox.addEventListener("change", function() {
+                    if (checkbox.checked) {
+
+                       
+                        
+                    }
+                });
+            });
+    /*------------------------------- Busca ---------------------------------------------*/
+
     </script>
 </body>
 </html>
