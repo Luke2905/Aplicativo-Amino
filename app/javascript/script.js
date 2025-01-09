@@ -167,3 +167,25 @@ function redirecionarChat(){
             alert("Teste 2");
         }
     });
+
+ /*------------------------------- Busca Table MP ---------------------------------------------*/
+
+    function buscaMP() {
+      const input = document.getElementById('barraPesquisa');
+      const filter = input.value.toUpperCase(); // Ignorar maiúsculas/minúsculas
+      const table = document.querySelector('table'); 
+      const rows = table.querySelectorAll('tbody tr');
+
+      rows.forEach(row => {
+          const cells = row.querySelectorAll('td');
+          const codigo = cells[1]?.textContent || ""; // Código
+          const descricao = cells[2]?.textContent || ""; // Descrição
+
+          // Verifica se o filtro corresponde ao código ou descrição
+          if (codigo.toUpperCase().includes(filter) || descricao.toUpperCase().includes(filter)) {
+              row.style.display = ""; // Mostra a linha
+          } else {
+              row.style.display = "none"; // Oculta a linha
+          }
+      });
+  }
