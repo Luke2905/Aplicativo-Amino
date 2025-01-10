@@ -18,9 +18,6 @@
             max-width: 1200px;
             margin: auto;
         }
-        #chart {
-            display: none;
-        }
         .search-form{
             max-width: 50%;
             display: flex;
@@ -104,8 +101,10 @@
 
     <script type="module">
         import { exportarDadosMP } from './javascript/dados-mp.js'; // Importa os dados do arquivo externo
+        import { exportarCustos } from './javascript/custos.js';
 
         window.dados = exportarDadosMP();
+        window.custos = exportarCustos();
 
         if (!window.dados) {
             console.error("Erro: Dados ainda não carregados.");
@@ -127,7 +126,7 @@
             window.dados.forEach((item) => {
                 const row = document.createElement("tr");
                 row.innerHTML = `
-                    <td><input type="checkbox" class="row-checkbox" /></td>
+                    <td><input type="checkbox" class="row-checkbox" value="${item.codigo}" /></td>
                     <td>${item.codigo}</td>
                     <td>${item.mp}</td>
                     <td>${item.custo}</td>
@@ -140,29 +139,40 @@
 
         // Função para adicionar event listeners às checkboxes
         function adicionarEventListeners() {
-            const checkboxes = document.querySelectorAll(".row-checkbox");
-            var myChart = document.getElementById("chart")
+        const checkboxes = document.querySelectorAll(".row-checkbox");
 
-            checkboxes.forEach((checkbox) => {
-                checkbox.addEventListener("change", function () {
-                    if (this.checked) {
-                        const row = this.closest("tr");
-                        const data = Array.from(row.querySelectorAll("td"))
-                            .slice(1) // Ignorar a primeira célula (checkbox)
-                            .map(cell => cell.textContent.trim());
-                        console.log("Informações da linha selecionada:", data);
-                        myChart.style.display = "block";
+        checkboxes.forEach((checkbox) => {
+            checkbox.addEventListener("change", function () {
+                if (this.checked) {
+                    const codigoSelecionado = this.value;
+
+                    // Filtrar dados do custo pelo código
+                    const dadosFiltrados = window.custos.find(
+                        (item) => item.codigo === codigoSelecionado
+                    );
+
+                    if (dadosFiltrados) {
+                        carregarGrafico(dadosFiltrados);
+                    } else {
+                        console.error("Dados não encontrados para o código:", codigoSelecionado);
                     }
-                });
+                }else{
+
+                }
             });
-        }
+        });
+    }
+
 
         /*---------------------- Gráficos Matérias Primas --------------------------------*/
 
-        const Mes = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]
+        function carregarGrafico(dados){
 
-        const xMes = Mes; // Valores X e Y do Gráfico
-        const yCusto = [ 15.5, 16, 20, 17.8, 17.8];
+            const Mes = dados.meses;
+            const Custo = dados.valores;
+
+            const xMes = Mes;
+        const yCusto = Custo;
 
         // Geração do gráfico 
         new Chart("chartMP", { 
@@ -187,6 +197,7 @@
             }
         });
 
+        }
 
     /*------------------------------------------ X ---------------------------------------*/
    
@@ -195,11 +206,14 @@
                 checkbox.addEventListener("change", function() {
                     if (checkbox.checked) {
 
-                       
+                      
+
                         
                     }
                 });
             });
+
+    /**/
 
     </script>
 </body>
