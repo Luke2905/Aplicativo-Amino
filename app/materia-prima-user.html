@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matéria Prima</title>
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="style-responsive.css" media="screen" />
+    <script src="javascript/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <link rel="icon" type="image/png" href="https://www.amino.com.br/wp-content/themes/amino/assets/img/amino-dark-logo.svg"/>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+        .search-form{
+            max-width: 50%;
+            display: flex;
+            margin-left: 25%;
+        }
+        #selectAno{
+            float: right;
+        }
+        #selectMes{
+            float: left;
+        }
+                        /* Estilo do fundo do modal */
+                        #meuModal {
+           display: none; /* Inicialmente oculto */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            font-size: 25px;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        /* Estilo do conteúdo do modal */
+        .modal-content {
+            background-color: #fefefe;
+            margin: 2% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 50%;
+            height: 800px;
+            border-radius: 8px;
+            
+        }
+
+        .modal-content h2{
+            text-align: center;
+        }
+
+        /* Estilo do botão de fechar */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Estilo básico para o formulário */
+        input[type="text"], input[type="email"], input[type="submit"] {
+            width: 100%;
+            height: 80px;
+            padding: 10px;
+            margin: 30px 0 30px 0;
+            box-sizing: border-box;
+            border-radius: 10px;
+            border: 1px solid;
+            font-size: x-large;
+        }
+        #abrirModal{
+            margin-left: 80%;
+            max-width: 400px;
+            max-height: 200px;
+            box-shadow: inset;
+            border-radius: 10px;
+        }
+        #select-cad{
+            width: 200px;
+            height: 40px;
+            border-radius: 10px;
+        }
+        @media screen and (max-width: 750px) {
+
+            #abrirModal{
+                margin-left: 70%;
+            }
+            #btn-mp2{
+                padding-left: 40%;
+            }
+            .modal-content{
+                margin: 8% auto;
+                min-width: 350px;
+            }
+            .table-mp{
+                grid-column: 1 / span 2;
+                grid-row: 2/ 4;
+            }
+            #dash-mp{
+                grid-column: 1/ span 2;
+                grid-row: 4/ 5; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Menu Lateral -->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <h1>AMINO</h1>
+        <h4 style="font-size: 75%;">Desenvolvimento de Fórmulas</h4>
+    <a href="home.html"><img class="icon" src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="screen"> Home</a>
+    <a href="pag-erro.html"><img class="icon" src="https://cdn-icons-png.flaticon.com/512/1536/1536385.png" alt="screen"> Aplicação</a>
+    <a href="busca.html"><img class="icon" src="https://cdn-icons-png.flaticon.com/512/702/702988.png" alt="screen">Busca por Propriedades</a>
+    <a href="pag-erro.html"><img class="icon" src="https://static.vecteezy.com/ti/vetor-gratis/p1/5846675-quimica-preto-glifo-icone-reacao-quimica-em-copo-tubo-de-teste-pipeta-frasco-laboratorio-equipamento-aulas-quimica-silhueta-simbolo-em-espaco-branco-isolado-ilustracao-vetor.jpg" alt="screen"> Ensaios</a>
+    <a href="formulas.html"><img class="icon" src="https://static.vecteezy.com/system/resources/previews/017/540/428/non_2x/formula-icon-free-vector.jpg" alt="screen"> Fórmula</a>
+    <a href="materia-prima.html"><img class="icon" src="https://cdn-icons-png.flaticon.com/512/645/645652.png" alt="screen"> Matéria-Prima</a>
+    <a href="pag-erro.html"><img class="icon" src="https://e7.pngegg.com/pngimages/900/842/png-clipart-computer-icons-encapsulated-postscript-others-angle-text.png" alt="screen"> Propriedades</a>
+    <a href="pag-erro.html"><img class="icon" src="https://cdn-icons-png.flaticon.com/512/2363/2363742.png" alt="screen"> Sistema</a>
+    <a href="comparativo.html"><img class="icon" src="https://cdn-icons-png.flaticon.com/512/45/45754.png" alt="screen"> Comparativo</a>
+    <a href="chat.html"><img class="icon" src="https://thumb.ac-illust.com/89/89e84c7e7bde4ad0161456287fd132ee_t.jpeg" alt="screen"> Troubleshoot</a>
+    <a href="pag-erro.html"><img class="icon" src="https://static.vecteezy.com/system/resources/previews/008/442/086/non_2x/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg" alt="screen"> Usuários</a>
+        <form action="login.html">
+            <input class="botao" type="submit" value="Sair" />
+        </form>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <div id="main">
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
+        <div class="home-header">
+            <h1 class="titulo-header">Matéria Prima</h1>
+        </div>
+        <div class="mp-body">
+            <div class="table-mp-user">
+                <input type="text" id="barraPesquisa" onkeyup="buscaMP()" placeholder="Pesquisa.">
+                <table id="tabela-mp">
+                    <thead>
+                        <th></th>
+                        <th>Código</th>
+                        <th>Descrição</th>
+                        <th>Custo ($)</th>
+                    </thead>
+                    <tbody id="table-body"></tbody>
+                </table>
+            </div>
+            <div class="actions">
+                <button id="btn-mp">Cadastro</button>
+                 <span id="btn-mp2" onclick="abrirFormulario()"><img class="icon" src="https://cdn-icons-png.freepik.com/256/876/876195.png?semt=ais_hybrid" alt="Chat"></span>
+            </div>
+        </div>
+
+                <!-- Modal -->
+                <div id="meuModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <h2>Cadastro de Fórmula</h2>
+    
+                        <form>
+                            <label for="nome">Descrição</label>
+                            <input type="text" id="nome" name="nome" required>
+                            
+                            <label for="codigo">Codigo:</label>
+                            <input type="text" id="cod" name="codigo" required>
+    
+                            <label for="custo">Custo:</label>
+                            <input type="text" id="custo" name="email" required>
+                            
+                            <input type="submit" value="Enviar">
+                        </form>
+                    </div>
+                </div>
+        <div class="home-footer">
+            <p>Aplicativo Conceito</p>
+            <p>© Todos os direitos reservados - AMINO QUIMICA LTDA</p>
+            <p>Desenvolvido por Lucas de Barros - Assistente Administrativo Operacional</p>
+        </div>
+    </div>
+
+    <script type="module">
+        import { exportarDadosMP } from './javascript/dados-mp.js'; // Importa os dados do arquivo externo
+        import { exportarCustos } from './javascript/custos.js';
+
+        window.dados = exportarDadosMP();
+        window.custos = exportarCustos();
+
+        if (!window.dados) {
+            console.error("Erro: Dados ainda não carregados.");
+        } else {
+            carregarDados();
+        }
+
+        // Função para carregar dados na tabela
+        function carregarDados() {
+            const tableBody = document.getElementById('table-body');
+
+            if (window.dados.length === 0) {
+                tableBody.innerHTML = `<tr><td colspan="5" class="no-data">Nenhum dado encontrado</td></tr>`;
+                return;
+            }
+
+            tableBody.innerHTML = ''; 
+
+            window.dados.forEach((item) => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td><input type="checkbox" class="row-checkbox" value="${item.codigo}" /></td>
+                    <td>${item.codigo}</td>
+                    <td>${item.mp}</td>
+                    <td>${item.custo}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+
+            adicionarEventListeners();
+        }
+
+        // Função para adicionar event listeners às checkboxes
+        function adicionarEventListeners() {
+        const checkboxes = document.querySelectorAll(".row-checkbox");
+
+        checkboxes.forEach((checkbox) => {
+            checkbox.addEventListener("change", function () {
+                if (this.checked) {
+                    const codigoSelecionado = this.value;
+
+
+                }else{
+
+                }
+            });
+        });
+    }
+
+
+        /*---------------------- Gráficos Matérias Primas --------------------------------*/
+
+        function carregarGrafico(dados){
+
+            const Mes = dados.meses;
+            const Custo = dados.valores;
+
+            const xMes = Mes;
+        const yCusto = Custo;
+
+        // Geração do gráfico 
+        new Chart("chartMP", { 
+            
+            type: "line", // -> Tipo de Grafico
+            data: {
+                labels: xMes, // -> Rótulos/Valores do eixo X
+                datasets: [{
+                    fill: false,
+                    lineTension: 0,
+                    backgroundColor:"rgba(0,0,255,1.0)",
+                    borderColor: "rgba(0,0,255,0.1)",
+                    data: yCusto // Valores eixo Y
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: "Histórico de Custo 2024"
+                },
+                legend: {display: false}
+            }
+        });
+
+        }
+
+    /*------------------------------------------ X ---------------------------------------*/
+   
+
+    checkboxes.forEach(function(checkbox) {
+                checkbox.addEventListener("change", function() {
+                    if (checkbox.checked) {
+
+                      
+
+                        
+                    }
+                });
+            });
+
+    /**/
+                 var form = document.getElementById("meuModal");
+                var botao = document.getElementById("btn-mp");
+                var span = document.getElementsByClassName("close")[0];
+
+            botao.onclick /*-> reconhece o click*/ = function() {
+
+                form.style.display = "block";
+            }
+
+            
+            // Quando o botão de fechar (x) for clicado, fechar o modal
+            span.onclick = function() {
+                form.style.display = "none";
+            }
+
+            // Fechar o modal ao clicar fora do conteúdo do modal
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+    </script>
+</body>
+</html>
