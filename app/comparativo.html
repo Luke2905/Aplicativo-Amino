@@ -8,6 +8,10 @@
         <link rel="stylesheet" type="text/css" href="style-responsive.css" media="screen" />
         <!-- Java Script Externo -->
         <script src="javascript/script.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="icon" type="image/png" href="https://www.amino.com.br/wp-content/themes/amino/assets/img/amino-dark-logo.svg"/> <!-- colocar icone na aba do site -->
     <style>
         body {
@@ -24,12 +28,15 @@
             color: white;
             padding: 20px;
             text-align: center;
+            margin: 5px;
+
         }
         .table-compare {
-            width: 98%;
+            margin: 5px;
+            width: 99.5%;
             height: 800px;
             border-collapse: collapse;
-            margin-top: 20px;
+
         }
         th, td {
             text-align: left;
@@ -95,10 +102,11 @@
 <!-- Conteúdo Principal -->
 <div id="main">
     <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
-    <div>
         <div class="header">
             <h1 class="titulo-header">Comparativo de Sistemas</h1>
         </div>
+
+        <h2 style="text-align: center; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Propriedades Reativas</h2>
     
         <table class="table-compare">
             <thead>
@@ -186,6 +194,75 @@
                 </tr>
             </tbody>
         </table>
+
+
+    <!-- ************************ Divisão Amiso e Poliol ************************ -->
+
+    <div class="card-compare">
+
+        
+        <h2 style="text-align: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"> Propriedades Componentes</h2>
+
+        <div id="card-A">
+
+            <p style="text-align: center; ">
+                <a class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">AMIPOL BVE 2260/EX</a>
+             </p>
+              <div class="row">
+                <div  class="col">
+                  <div class="collapse multi-collapse" id="multiCollapseExample1">
+                    <div class="card bg-light mb-3" style="max-width: 45rem; height: 16rem;">
+                        <div class="card-header  ">AMIPOL BVE 2260/EX</div>
+                        <div class="card-body">
+                          <h5 class="card-title">Success card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                        <div class="card-footer">Proporção 68%</div>
+                      </div>
+                        <div class="card bg-light mb-3" style="max-width: 45rem; height: 16rem;">
+                        <div class="card-header  ">AMIPOL BVE 2260/EX</div>
+                        <div class="card-body">
+                          <h5 class="card-title">Success card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                        <div class="card-footer">Proporção 68%</div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+
+        </div>
+
+          <div id="card-B">
+            
+            <p style="text-align: center; ">
+                <a class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample2" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">AMIPOL BVE 2258</a>
+              </p>
+              <div class="row">
+                <div class="col">
+                  <div  class="collapse multi-collapse" id="multiCollapseExample2">
+                    <div class="card bg-light mb-3" style="max-width: 45rem; height: 16rem;">
+                        <div class="card-header  ">AMIPOL BVE 2258</div>
+                        <div class="card-body">
+                          <p class="card-text">Aparência Líquido viscoso</p>
+                          <p class="card-text">Cor Amarelo claro</p>
+                          <p class="card-text">Densidade (g/mL a 25 ºC) Aprox. 1,06</p>   
+                        </div>
+                        <div class="card-footer">Proporção 68%</div>
+                      </div>
+                        <div class="card bg-light mb-3" style="max-width: 45rem; height: 16rem;">
+                        <div class="card-header  ">AMISO BVE 1050</div>
+                        <div class="card-body">
+                          <h5 class="card-title">Success card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                        <div class="card-footer">Proporção 68%</div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+
+          </div>
     </div>
         <!-- Rodapé da Página -->
         <div class="home-footer">
