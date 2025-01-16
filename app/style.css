@@ -893,6 +893,28 @@ label, input{
 }
 /*-------------------------- Cards Amiso x Amipol ----------------------*/
 
-.card{
-	height: 400px;
+.card-compare{
+	margin: 10px;
+	min-height: 500px;
+	display: grid;
+    grid-template-columns: 1fr 1fr; /* Proporção melhorada para as colunas */
+    grid-template-rows: auto; /* Ajusta a altura automaticamente */
+}
+.card-header{
+	text-align: center;
+}
+#card-A{
+
+	grid-row: 2;
+	grid-column: 1;
+}
+#card-B{
+
+	grid-row: 2;
+	grid-column: 2;
+}
+.card-compare h2{
+	margin: 20px;
+	grid-row: 1;
+	grid-column: 1/ span 2;
 }
