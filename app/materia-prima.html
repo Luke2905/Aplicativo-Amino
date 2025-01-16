@@ -182,7 +182,7 @@
             <div class="actions">
                     <button id="btn-mp">Cadastro</button>
 
-                <span id="btn-mp2" onclick="abrirFormulario()"><img class="icon" src="https://cdn-icons-png.freepik.com/256/876/876195.png?semt=ais_hybrid" alt="Chat"></span>
+                <span id="btn-mp2" onclick="redirecionarUser()"><img class="icon" src="https://cdn-icons-png.freepik.com/256/876/876195.png?semt=ais_hybrid" alt="Chat"></span>
             </div>
         </div>
 
@@ -351,9 +351,17 @@
             // Fechar o modal ao clicar fora do conteúdo do modal
             window.onclick = function(event) {
                 if (event.target == modal) {
-                    modal.style.display = "none";
+                    form.style.display = "none";
                 }
             }
+
+            function redirecionarUser(){
+                setTimeout(
+                    function() {
+                        window.location.href = "materia-prima-user.html";
+                    }, 1000);
+
+                }
 
     </script>
 </body>
